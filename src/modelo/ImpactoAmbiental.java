@@ -10,5 +10,5 @@ package modelo;
  * @author User
  */
 public class ImpactoAmbiental {
-    
+    // Hola
 }
