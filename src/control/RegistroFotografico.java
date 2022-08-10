@@ -11,9 +11,6 @@ import java.util.ArrayList;
  *
  * @author jpag0
  */
-public class Excel {
-    File myFIle = new File("asdasd");
-    private ArrayList<String> preguntasTexto = new ArrayList<>();
-    private ArrayList<String> preguntasOpcion= new ArrayList<>();
-    private ArrayList<Double> preguntasFormula = new ArrayList<>();
+public class RegistroFotografico {
+    public ArrayList<File> imagenes = new ArrayList();
 }

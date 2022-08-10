@@ -10,5 +10,5 @@ package control;
  * @author User
  */
 public class Pdf {
-    
+    private int numPaginas;
 }
