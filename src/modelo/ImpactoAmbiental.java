@@ -5,7 +5,7 @@ package modelo;
 
 /**
  * @author Ana Vega
- * @author Nicolás Carmona
+ * @author Nicolás Carmona Cardona
  * @author Mateo Velasquez 
  * @author Jose D. Gómez
  * @author Daniel Cano
