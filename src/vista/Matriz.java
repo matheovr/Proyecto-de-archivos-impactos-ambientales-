@@ -345,7 +345,7 @@ public class Matriz extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         jButton1.setText("AGREGAR REGISTRO FOTOGRÁFICO");
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -356,7 +356,7 @@ public class Matriz extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         jButton2.setText("CARGAR ARCHIVO DE EXCEL");
         jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -367,7 +367,7 @@ public class Matriz extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
         jButton3.setText("GENERAR INFORME FINAL");
         jButton3.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
