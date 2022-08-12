@@ -66,6 +66,12 @@ public class Pdf {
             tabla.addCell("CICLO DE VIDA DEL SERVICIO");
             tabla.addCell("SITUACION");
             tabla.addCell("ASPECTO AMBIENTAL ASOCIADO");
+            tabla.addCell("IMPACTO AMBIENTAL");
+            tabla.addCell("RECURSO AFECTADO");
+            tabla.addCell("OBSERVACIONES");
+            tabla.addCell("LEGISLACIÓN AMBIENTAL RELACIONADA");
+            tabla.addCell("CONTROL OPERACIONAL");
+            tabla.addCell("ACCIONES DE MEJORA DEL CONTROL OPERACIONAL");
             
             documento.close();
             JOptionPane.showMessageDialog(null, "Reporte creado");
