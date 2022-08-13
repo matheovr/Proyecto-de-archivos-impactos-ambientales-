@@ -57,13 +57,13 @@ public class Matriz extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtProceso = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtActividadAspecto = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        txtCicloVida = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        txtSede = new javax.swing.JTextArea();
         jComboBox5 = new javax.swing.JComboBox();
         jComboBox6 = new javax.swing.JComboBox();
         jComboBox7 = new javax.swing.JComboBox();
@@ -71,16 +71,16 @@ public class Matriz extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTextArea9 = new javax.swing.JTextArea();
+        txtObservaciones = new javax.swing.JTextArea();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jTextArea10 = new javax.swing.JTextArea();
+        txtControlOperacional = new javax.swing.JTextArea();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jTextArea11 = new javax.swing.JTextArea();
+        txtAccionMejora = new javax.swing.JTextArea();
         jScrollPane13 = new javax.swing.JScrollPane();
-        jTextArea12 = new javax.swing.JTextArea();
+        txtLegislacion = new javax.swing.JTextArea();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -118,7 +118,6 @@ public class Matriz extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("IDEAM");
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1180, 920));
         setResizable(false);
         setSize(new java.awt.Dimension(1180, 920));
 
@@ -176,29 +175,29 @@ public class Matriz extends javax.swing.JFrame {
         jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel10.setOpaque(true);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane2.setViewportView(jTextArea1);
+        txtProceso.setColumns(20);
+        txtProceso.setLineWrap(true);
+        txtProceso.setRows(5);
+        txtProceso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane2.setViewportView(txtProceso);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setRows(5);
-        jTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane3.setViewportView(jTextArea2);
+        txtActividadAspecto.setColumns(20);
+        txtActividadAspecto.setLineWrap(true);
+        txtActividadAspecto.setRows(5);
+        txtActividadAspecto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane3.setViewportView(txtActividadAspecto);
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setLineWrap(true);
-        jTextArea3.setRows(5);
-        jTextArea3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane4.setViewportView(jTextArea3);
+        txtCicloVida.setColumns(20);
+        txtCicloVida.setLineWrap(true);
+        txtCicloVida.setRows(5);
+        txtCicloVida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane4.setViewportView(txtCicloVida);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setLineWrap(true);
-        jTextArea4.setRows(5);
-        jTextArea4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane5.setViewportView(jTextArea4);
+        txtSede.setColumns(20);
+        txtSede.setLineWrap(true);
+        txtSede.setRows(5);
+        txtSede.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane5.setViewportView(txtSede);
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "NORMAL", "ANORMAL", "EMERGENCIA" }));
         jComboBox5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -221,11 +220,11 @@ public class Matriz extends javax.swing.JFrame {
         jLabel19.setIconTextGap(2);
         jLabel19.setOpaque(true);
 
-        jTextArea9.setColumns(20);
-        jTextArea9.setLineWrap(true);
-        jTextArea9.setRows(5);
-        jTextArea9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane10.setViewportView(jTextArea9);
+        txtObservaciones.setColumns(20);
+        txtObservaciones.setLineWrap(true);
+        txtObservaciones.setRows(5);
+        txtObservaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane10.setViewportView(txtObservaciones);
 
         jLabel20.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -245,23 +244,23 @@ public class Matriz extends javax.swing.JFrame {
         jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel22.setOpaque(true);
 
-        jTextArea10.setColumns(20);
-        jTextArea10.setLineWrap(true);
-        jTextArea10.setRows(5);
-        jTextArea10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane11.setViewportView(jTextArea10);
+        txtControlOperacional.setColumns(20);
+        txtControlOperacional.setLineWrap(true);
+        txtControlOperacional.setRows(5);
+        txtControlOperacional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane11.setViewportView(txtControlOperacional);
 
-        jTextArea11.setColumns(20);
-        jTextArea11.setLineWrap(true);
-        jTextArea11.setRows(5);
-        jTextArea11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane12.setViewportView(jTextArea11);
+        txtAccionMejora.setColumns(20);
+        txtAccionMejora.setLineWrap(true);
+        txtAccionMejora.setRows(5);
+        txtAccionMejora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane12.setViewportView(txtAccionMejora);
 
-        jTextArea12.setColumns(20);
-        jTextArea12.setLineWrap(true);
-        jTextArea12.setRows(5);
-        jTextArea12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane13.setViewportView(jTextArea12);
+        txtLegislacion.setColumns(20);
+        txtLegislacion.setLineWrap(true);
+        txtLegislacion.setRows(5);
+        txtLegislacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane13.setViewportView(txtLegislacion);
 
         jLabel11.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -383,7 +382,7 @@ public class Matriz extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+                .addContainerGap(99, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -661,13 +660,13 @@ public class Matriz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea10;
-    private javax.swing.JTextArea jTextArea11;
-    private javax.swing.JTextArea jTextArea12;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea9;
+    private javax.swing.JTextArea txtAccionMejora;
+    private javax.swing.JTextArea txtActividadAspecto;
+    private javax.swing.JTextArea txtCicloVida;
+    private javax.swing.JTextArea txtControlOperacional;
+    private javax.swing.JTextArea txtLegislacion;
+    private javax.swing.JTextArea txtObservaciones;
+    private javax.swing.JTextArea txtProceso;
+    private javax.swing.JTextArea txtSede;
     // End of variables declaration//GEN-END:variables
 }

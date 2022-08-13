@@ -27,6 +27,7 @@ public class ImpactoAmbiental {
     private String recursoAfectado;
     private String tipoDelImpacto;
     private String calificacion;
+    private String valor;
     private int alcance;
     private int probabilidad;
     private int duracion;
@@ -35,7 +36,6 @@ public class ImpactoAmbiental {
     private int normatividad;
     private int importanciaDelImpacto;
     private boolean cumpleNormatividad;
-    private boolean valor;
     //private Imagen registroFotografico;
 
     /**
@@ -71,7 +71,7 @@ public class ImpactoAmbiental {
      * @param cumpleNormatividad
      * @param valor 
      */
-    public ImpactoAmbiental(String proposito, String sede, String actividadAsociada, String cicloDeVida, String observaciones, String legislacionAsociada, String controlOperacional, String accionesDeMejora, String situacion, String aspectoAmbiental, String impactoAmbiental, String recursoAfectado, String tipoDelImpacto, String calificacion, int alcance, int probabilidad, int duracion, int recuperabilidad, int magnitud, int normatividad, int importanciaDelImpacto, boolean cumpleNormatividad, boolean valor) {
+    public ImpactoAmbiental(String proposito, String sede, String actividadAsociada, String cicloDeVida, String observaciones, String legislacionAsociada, String controlOperacional, String accionesDeMejora, String situacion, String aspectoAmbiental, String impactoAmbiental, String recursoAfectado, String tipoDelImpacto, String calificacion, int alcance, int probabilidad, int duracion, int recuperabilidad, int magnitud, int normatividad, int importanciaDelImpacto, boolean cumpleNormatividad, String valor) {
         this.proposito = proposito;
         this.sede = sede;
         this.actividadAsociada = actividadAsociada;
@@ -273,11 +273,11 @@ public class ImpactoAmbiental {
         this.cumpleNormatividad = cumpleNormatividad;
     }
 
-    public boolean isValor() {
+    public String isValor() {
         return valor;
     }
 
-    public void setValor(boolean valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 
@@ -291,4 +291,31 @@ public class ImpactoAmbiental {
         return "ImpactoAmbiental{" + "proposito=" + proposito + ", sede=" + sede + ", actividadAsociada=" + actividadAsociada + ", cicloDeVida=" + cicloDeVida + ", observaciones=" + observaciones + ", legislacionAsociada=" + legislacionAsociada + ", controlOperacional=" + controlOperacional + ", accionesDeMejora=" + accionesDeMejora + ", situacion=" + situacion + ", aspectoAmbiental=" + aspectoAmbiental + ", impactoAmbiental=" + impactoAmbiental + ", recursoAfectado=" + recursoAfectado + ", tipoDelImpacto=" + tipoDelImpacto + ", calificacion=" + calificacion + ", alcance=" + alcance + ", probabilidad=" + probabilidad + ", duracion=" + duracion + ", recuperabilidad=" + recuperabilidad + ", magnitud=" + magnitud + ", normatividad=" + normatividad + ", importanciaDelImpacto=" + importanciaDelImpacto + ", cumpleNormatividad=" + cumpleNormatividad + ", valor=" + valor + '}';
     }
     
+    public void calcImportancia(){
+        this.importanciaDelImpacto=this.alcance*this.probabilidad*this.duracion*this.recuperabilidad*this.magnitud*this.normatividad;
+    }
+    
+    public void calcValor(){
+        if (this.importanciaDelImpacto>125000 && this.importanciaDelImpacto<=1000000){
+            this.valor="Alta";
+        }
+            else if (this.importanciaDelImpacto>25000 && this.importanciaDelImpacto<=125000){
+                this.valor="Moderada";
+            }
+                else if (this.importanciaDelImpacto>1 && this.importanciaDelImpacto<=25000){
+                    this.valor="Baja";
+                }
+    }
+    
+    public void calcCalificacion(){
+        if ((this.importanciaDelImpacto>25000 && this.cumpleNormatividad==true) || (this.importanciaDelImpacto>25000 && this.cumpleNormatividad==false)){
+            this.calificacion="Significativo";
+        }
+            else if (this.importanciaDelImpacto<=25000 && this.cumpleNormatividad==true){
+                this.calificacion="No significativo";
+            }
+                else if (this.importanciaDelImpacto<=25000 && this.cumpleNormatividad==false){
+                    this.calificacion="Significativo";
+                }
+    }
 }
