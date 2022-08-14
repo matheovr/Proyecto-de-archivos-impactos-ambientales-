@@ -6,6 +6,7 @@
 
 package vista;
 
+import modelo.ImpactoAmbiental;
 import control.Excel;
 import java.awt.Color;
 import java.awt.Container;
@@ -47,60 +48,60 @@ public class Matriz extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        lblProceso = new javax.swing.JLabel();
+        lblSede = new javax.swing.JLabel();
+        lblActividadAsociada = new javax.swing.JLabel();
+        lblCicloVida = new javax.swing.JLabel();
+        lblSituacion = new javax.swing.JLabel();
+        lblAspectoAmbiental = new javax.swing.JLabel();
+        lblImpactoAmbiental = new javax.swing.JLabel();
+        lblRecursoAfectado = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtProceso = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        txtActividadAspecto = new javax.swing.JTextArea();
+        txtActividadAsociada = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
         txtCicloVida = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
         txtSede = new javax.swing.JTextArea();
-        jComboBox5 = new javax.swing.JComboBox();
-        jComboBox6 = new javax.swing.JComboBox();
-        jComboBox7 = new javax.swing.JComboBox();
-        jComboBox8 = new javax.swing.JComboBox();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        boxSituacion = new javax.swing.JComboBox();
+        boxAspectoAmbiental = new javax.swing.JComboBox();
+        boxImpactoAmbiental = new javax.swing.JComboBox();
+        boxRecursoAfectado = new javax.swing.JComboBox();
+        lblLogo = new javax.swing.JLabel();
+        lblObservacion = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
         txtObservaciones = new javax.swing.JTextArea();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
+        lblLegislacion = new javax.swing.JLabel();
+        lblControl = new javax.swing.JLabel();
+        lblAccionesMejora = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
         txtControlOperacional = new javax.swing.JTextArea();
         jScrollPane12 = new javax.swing.JScrollPane();
         txtAccionMejora = new javax.swing.JTextArea();
         jScrollPane13 = new javax.swing.JScrollPane();
         txtLegislacion = new javax.swing.JTextArea();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
-        jComboBox4 = new javax.swing.JComboBox();
-        jComboBox9 = new javax.swing.JComboBox();
-        jComboBox10 = new javax.swing.JComboBox();
-        jComboBox11 = new javax.swing.JComboBox();
-        jComboBox12 = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        lblValoracionImpactos = new javax.swing.JLabel();
+        lblTipoImpacto = new javax.swing.JLabel();
+        lblAlcance = new javax.swing.JLabel();
+        lblProbabilidad = new javax.swing.JLabel();
+        lblDuracion = new javax.swing.JLabel();
+        lblRecuperabilidad = new javax.swing.JLabel();
+        lblMagnitud = new javax.swing.JLabel();
+        lblNormatividad = new javax.swing.JLabel();
+        lblCumpleNormatividad = new javax.swing.JLabel();
+        boxTipoImpacto = new javax.swing.JComboBox();
+        boxAlcance = new javax.swing.JComboBox();
+        boxDuracion = new javax.swing.JComboBox();
+        boxRecuperabilidad = new javax.swing.JComboBox();
+        boxProbabilidad = new javax.swing.JComboBox();
+        boxMagnitud = new javax.swing.JComboBox();
+        boxNormatividad = new javax.swing.JComboBox();
+        boxCumpleNormatividad = new javax.swing.JComboBox();
+        btnAgregarRegistro = new javax.swing.JButton();
+        btnCargarExcel = new javax.swing.JButton();
+        btnGenerarInforme = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -121,59 +122,59 @@ public class Matriz extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1180, 920));
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel1.setText("MATRIZ DE IDENTIFICACIÓN DE ASPECTOS Y VALORACIÓN DE IMPACTOS AMBIENTALES");
+        lblTitulo.setFont(new java.awt.Font("sansserif", 1, 20)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(153, 153, 153));
+        lblTitulo.setText("MATRIZ DE IDENTIFICACIÓN DE ASPECTOS Y VALORACIÓN DE IMPACTOS AMBIENTALES");
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("PROCESO");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel2.setIconTextGap(2);
-        jLabel2.setOpaque(true);
+        lblProceso.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblProceso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProceso.setText("PROCESO");
+        lblProceso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblProceso.setIconTextGap(2);
+        lblProceso.setOpaque(true);
 
-        jLabel3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("SEDE");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel3.setOpaque(true);
+        lblSede.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblSede.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSede.setText("SEDE");
+        lblSede.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblSede.setOpaque(true);
 
-        jLabel4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("ACTIVIDAD ASOCIADA AL ASPECTO");
-        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel4.setOpaque(true);
+        lblActividadAsociada.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblActividadAsociada.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblActividadAsociada.setText("ACTIVIDAD ASOCIADA AL ASPECTO");
+        lblActividadAsociada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblActividadAsociada.setOpaque(true);
 
-        jLabel5.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("CICLO DE VIDA DEL SERVICIO");
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel5.setOpaque(true);
+        lblCicloVida.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblCicloVida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCicloVida.setText("CICLO DE VIDA DEL SERVICIO");
+        lblCicloVida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCicloVida.setOpaque(true);
 
-        jLabel7.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("SITUACIÓN");
-        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel7.setIconTextGap(2);
-        jLabel7.setOpaque(true);
+        lblSituacion.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblSituacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSituacion.setText("SITUACIÓN");
+        lblSituacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblSituacion.setIconTextGap(2);
+        lblSituacion.setOpaque(true);
 
-        jLabel8.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("ASPECTO AMBIENTAL ASOCIADO");
-        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel8.setOpaque(true);
+        lblAspectoAmbiental.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblAspectoAmbiental.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAspectoAmbiental.setText("ASPECTO AMBIENTAL ASOCIADO");
+        lblAspectoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAspectoAmbiental.setOpaque(true);
 
-        jLabel9.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("IMPACTO AMBIENTAL");
-        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel9.setOpaque(true);
+        lblImpactoAmbiental.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblImpactoAmbiental.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblImpactoAmbiental.setText("IMPACTO AMBIENTAL");
+        lblImpactoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblImpactoAmbiental.setOpaque(true);
 
-        jLabel10.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("RECURSO AFECTADO");
-        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel10.setOpaque(true);
+        lblRecursoAfectado.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblRecursoAfectado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRecursoAfectado.setText("RECURSO AFECTADO");
+        lblRecursoAfectado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblRecursoAfectado.setOpaque(true);
 
         txtProceso.setColumns(20);
         txtProceso.setLineWrap(true);
@@ -181,11 +182,11 @@ public class Matriz extends javax.swing.JFrame {
         txtProceso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane2.setViewportView(txtProceso);
 
-        txtActividadAspecto.setColumns(20);
-        txtActividadAspecto.setLineWrap(true);
-        txtActividadAspecto.setRows(5);
-        txtActividadAspecto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane3.setViewportView(txtActividadAspecto);
+        txtActividadAsociada.setColumns(20);
+        txtActividadAsociada.setLineWrap(true);
+        txtActividadAsociada.setRows(5);
+        txtActividadAsociada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane3.setViewportView(txtActividadAsociada);
 
         txtCicloVida.setColumns(20);
         txtCicloVida.setLineWrap(true);
@@ -199,26 +200,26 @@ public class Matriz extends javax.swing.JFrame {
         txtSede.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane5.setViewportView(txtSede);
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "NORMAL", "ANORMAL", "EMERGENCIA" }));
-        jComboBox5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxSituacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "NORMAL", "ANORMAL", "EMERGENCIA" }));
+        boxSituacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesAspectoAmbiental()));
-        jComboBox6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxAspectoAmbiental.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesAspectoAmbiental()));
+        boxAspectoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesImpactoAmbiental()));
-        jComboBox7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxImpactoAmbiental.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesImpactoAmbiental()));
+        boxImpactoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesRecursoAfectado()));
-        jComboBox8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxRecursoAfectado.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesRecursoAfectado()));
+        boxRecursoAfectado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono_IDEAM 1.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono_IDEAM 1.png"))); // NOI18N
 
-        jLabel19.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("OBSERVACIONES");
-        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel19.setIconTextGap(2);
-        jLabel19.setOpaque(true);
+        lblObservacion.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblObservacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblObservacion.setText("OBSERVACIONES");
+        lblObservacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblObservacion.setIconTextGap(2);
+        lblObservacion.setOpaque(true);
 
         txtObservaciones.setColumns(20);
         txtObservaciones.setLineWrap(true);
@@ -226,23 +227,23 @@ public class Matriz extends javax.swing.JFrame {
         txtObservaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane10.setViewportView(txtObservaciones);
 
-        jLabel20.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("LEGISLACIÓN AMB. RELACIONADA");
-        jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel20.setOpaque(true);
+        lblLegislacion.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblLegislacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLegislacion.setText("LEGISLACIÓN AMB. RELACIONADA");
+        lblLegislacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblLegislacion.setOpaque(true);
 
-        jLabel21.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("CONTROL OPERACIONAL");
-        jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel21.setOpaque(true);
+        lblControl.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblControl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblControl.setText("CONTROL OPERACIONAL");
+        lblControl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblControl.setOpaque(true);
 
-        jLabel22.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("ACCIONES DE MEJORA CTRL. OPER.");
-        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel22.setOpaque(true);
+        lblAccionesMejora.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblAccionesMejora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAccionesMejora.setText("ACCIONES DE MEJORA CTRL. OPER.");
+        lblAccionesMejora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAccionesMejora.setOpaque(true);
 
         txtControlOperacional.setColumns(20);
         txtControlOperacional.setLineWrap(true);
@@ -262,114 +263,114 @@ public class Matriz extends javax.swing.JFrame {
         txtLegislacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane13.setViewportView(txtLegislacion);
 
-        jLabel11.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("VALORACIÓN DE IMPACTOS AMBIENTALES");
-        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel11.setOpaque(true);
+        lblValoracionImpactos.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblValoracionImpactos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblValoracionImpactos.setText("VALORACIÓN DE IMPACTOS AMBIENTALES");
+        lblValoracionImpactos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblValoracionImpactos.setOpaque(true);
 
-        jLabel12.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("TIPO IMPACTO");
-        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel12.setOpaque(true);
+        lblTipoImpacto.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblTipoImpacto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTipoImpacto.setText("TIPO IMPACTO");
+        lblTipoImpacto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblTipoImpacto.setOpaque(true);
 
-        jLabel13.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("ALCANCE");
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel13.setOpaque(true);
+        lblAlcance.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblAlcance.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAlcance.setText("ALCANCE");
+        lblAlcance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAlcance.setOpaque(true);
 
-        jLabel14.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("PROBABILIDAD");
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel14.setOpaque(true);
+        lblProbabilidad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblProbabilidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProbabilidad.setText("PROBABILIDAD");
+        lblProbabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblProbabilidad.setOpaque(true);
 
-        jLabel15.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("DURACIÓN");
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel15.setOpaque(true);
+        lblDuracion.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblDuracion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDuracion.setText("DURACIÓN");
+        lblDuracion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblDuracion.setOpaque(true);
 
-        jLabel16.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("RECUPERABILIDAD");
-        jLabel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel16.setOpaque(true);
+        lblRecuperabilidad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblRecuperabilidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRecuperabilidad.setText("RECUPERABILIDAD");
+        lblRecuperabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblRecuperabilidad.setOpaque(true);
 
-        jLabel17.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("MAGNITUD");
-        jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel17.setOpaque(true);
+        lblMagnitud.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblMagnitud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMagnitud.setText("MAGNITUD");
+        lblMagnitud.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblMagnitud.setOpaque(true);
 
-        jLabel18.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("NORMATIVIDAD");
-        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel18.setOpaque(true);
+        lblNormatividad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblNormatividad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNormatividad.setText("NORMATIVIDAD");
+        lblNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblNormatividad.setOpaque(true);
 
-        jLabel24.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("<html><body><center>CUMPLE <br>NORMATIVIDAD</center></body></html>");
-        jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel24.setOpaque(true);
+        lblCumpleNormatividad.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblCumpleNormatividad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCumpleNormatividad.setText("<html><body><center>CUMPLE <br>NORMATIVIDAD</center></body></html>");
+        lblCumpleNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCumpleNormatividad.setOpaque(true);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "POSITIVO (+)", "NEGATIVO (-)" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxTipoImpacto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "POSITIVO (+)", "NEGATIVO (-)" }));
+        boxTipoImpacto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxAlcance.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
+        boxAlcance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
-        jComboBox3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxDuracion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
+        boxDuracion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
-        jComboBox4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxRecuperabilidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
+        boxRecuperabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
-        jComboBox9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxProbabilidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
+        boxProbabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
-        jComboBox10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxMagnitud.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
+        boxMagnitud.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "10" }));
-        jComboBox11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxNormatividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "10" }));
+        boxNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SI", "NO" }));
-        jComboBox12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        boxCumpleNormatividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SI", "NO" }));
+        boxCumpleNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
-        jButton1.setText("AGREGAR REGISTRO FOTOGRÁFICO");
-        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarRegistro.setBackground(new java.awt.Color(204, 204, 204));
+        btnAgregarRegistro.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
+        btnAgregarRegistro.setText("AGREGAR REGISTRO FOTOGRÁFICO");
+        btnAgregarRegistro.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        btnAgregarRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregarRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarRegistroActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
-        jButton2.setText("CARGAR ARCHIVO DE EXCEL");
-        jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnCargarExcel.setBackground(new java.awt.Color(204, 204, 204));
+        btnCargarExcel.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
+        btnCargarExcel.setText("CARGAR ARCHIVO DE EXCEL");
+        btnCargarExcel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        btnCargarExcel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCargarExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCargarExcelActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(153, 153, 153));
-        jButton3.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
-        jButton3.setText("GENERAR INFORME FINAL");
-        jButton3.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnGenerarInforme.setBackground(new java.awt.Color(153, 153, 153));
+        btnGenerarInforme.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+        btnGenerarInforme.setText("GENERAR INFORME FINAL");
+        btnGenerarInforme.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        btnGenerarInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGenerarInforme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnGenerarInformeActionPerformed(evt);
             }
         });
 
@@ -379,7 +380,7 @@ public class Matriz extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(428, 428, 428)
-                .addComponent(jLabel6)
+                .addComponent(lblLogo)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(99, Short.MAX_VALUE)
@@ -387,13 +388,13 @@ public class Matriz extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblSede, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblActividadAsociada, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblCicloVida, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
@@ -403,65 +404,65 @@ public class Matriz extends javax.swing.JFrame {
                                 .addGap(0, 0, 0)
                                 .addComponent(jScrollPane4))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblAspectoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblImpactoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblRecursoAfectado, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxAspectoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxImpactoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(boxRecursoAfectado, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblObservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblLegislacion, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblControl, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblAccionesMejora, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxTipoImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxProbabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxRecuperabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(boxCumpleNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblValoracionImpactos, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblTipoImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblProbabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblRecuperabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(lblNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblCumpleNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(0, 0, 0)
@@ -472,30 +473,30 @@ public class Matriz extends javax.swing.JFrame {
                                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(91, 91, 91)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnCargarExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(65, 65, 65)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnAgregarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(98, 98, 98))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(lblTitulo)
                         .addGap(154, 154, 154))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnGenerarInforme, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(408, 408, 408))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel6)
+                .addComponent(lblLogo)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addComponent(lblTitulo)
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSede, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblActividadAsociada, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCicloVida, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -503,21 +504,21 @@ public class Matriz extends javax.swing.JFrame {
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAspectoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblImpactoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblRecursoAfectado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boxSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxAspectoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxImpactoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxRecursoAfectado, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblObservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLegislacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblControl, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAccionesMejora, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -526,51 +527,67 @@ public class Matriz extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblValoracionImpactos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTipoImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblProbabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblRecuperabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblCumpleNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxTipoImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(boxAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(boxProbabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boxDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(boxMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(boxRecuperabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boxNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxCumpleNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(btnCargarExcel)
+                    .addComponent(btnAgregarRegistro))
                 .addGap(22, 22, 22)
-                .addComponent(jButton3)
+                .addComponent(btnGenerarInforme)
                 .addGap(46, 46, 46))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAgregarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarRegistroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAgregarRegistroActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnCargarExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarExcelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCargarExcelActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnGenerarInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarInformeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        ImpactoAmbiental registro = new ImpactoAmbiental(txtProceso.getText(), txtSede.getText(), txtActividadAsociada.getText(), txtCicloVida.getText(), txtObservaciones.getText(), 
+                txtLegislacion.getText(), txtControlOperacional.getText(), txtAccionMejora.getText(), boxSituacion.getSelectedItem().toString(), boxAspectoAmbiental.getSelectedItem().toString(), 
+                boxImpactoAmbiental.getSelectedItem().toString(), boxRecursoAfectado.getSelectedItem().toString(), boxTipoImpacto.getSelectedItem().toString(), "", Integer.parseInt(boxAlcance.getSelectedItem().toString()),
+                Integer.parseInt(boxProbabilidad.getSelectedItem().toString()), Integer.parseInt(boxDuracion.getSelectedItem().toString()), Integer.parseInt(boxRecuperabilidad.getSelectedItem().toString()), 
+                Integer.parseInt(boxMagnitud.getSelectedItem().toString()), Integer.parseInt(boxNormatividad.getSelectedItem().toString()), 0, true, "");
+        
+        if (boxCumpleNormatividad.getSelectedItem().toString().equalsIgnoreCase("si")) {
+            registro.setCumpleNormatividad(true);
+        } else {
+            registro.setCumpleNormatividad(false);
+        }
+        registro.calcImportancia();
+        registro.calcCalificacion();
+        registro.calcValor();
+        
+        System.out.println(registro.toString());
+    }//GEN-LAST:event_btnGenerarInformeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -612,44 +629,21 @@ public class Matriz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox10;
-    private javax.swing.JComboBox jComboBox11;
-    private javax.swing.JComboBox jComboBox12;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JComboBox jComboBox4;
-    private javax.swing.JComboBox jComboBox5;
-    private javax.swing.JComboBox jComboBox6;
-    private javax.swing.JComboBox jComboBox7;
-    private javax.swing.JComboBox jComboBox8;
-    private javax.swing.JComboBox jComboBox9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JComboBox boxAlcance;
+    private javax.swing.JComboBox boxAspectoAmbiental;
+    private javax.swing.JComboBox boxCumpleNormatividad;
+    private javax.swing.JComboBox boxDuracion;
+    private javax.swing.JComboBox boxImpactoAmbiental;
+    private javax.swing.JComboBox boxMagnitud;
+    private javax.swing.JComboBox boxNormatividad;
+    private javax.swing.JComboBox boxProbabilidad;
+    private javax.swing.JComboBox boxRecuperabilidad;
+    private javax.swing.JComboBox boxRecursoAfectado;
+    private javax.swing.JComboBox boxSituacion;
+    private javax.swing.JComboBox boxTipoImpacto;
+    private javax.swing.JButton btnAgregarRegistro;
+    private javax.swing.JButton btnCargarExcel;
+    private javax.swing.JButton btnGenerarInforme;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -660,8 +654,31 @@ public class Matriz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblAccionesMejora;
+    private javax.swing.JLabel lblActividadAsociada;
+    private javax.swing.JLabel lblAlcance;
+    private javax.swing.JLabel lblAspectoAmbiental;
+    private javax.swing.JLabel lblCicloVida;
+    private javax.swing.JLabel lblControl;
+    private javax.swing.JLabel lblCumpleNormatividad;
+    private javax.swing.JLabel lblDuracion;
+    private javax.swing.JLabel lblImpactoAmbiental;
+    private javax.swing.JLabel lblLegislacion;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblMagnitud;
+    private javax.swing.JLabel lblNormatividad;
+    private javax.swing.JLabel lblObservacion;
+    private javax.swing.JLabel lblProbabilidad;
+    private javax.swing.JLabel lblProceso;
+    private javax.swing.JLabel lblRecuperabilidad;
+    private javax.swing.JLabel lblRecursoAfectado;
+    private javax.swing.JLabel lblSede;
+    private javax.swing.JLabel lblSituacion;
+    private javax.swing.JLabel lblTipoImpacto;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblValoracionImpactos;
     private javax.swing.JTextArea txtAccionMejora;
-    private javax.swing.JTextArea txtActividadAspecto;
+    private javax.swing.JTextArea txtActividadAsociada;
     private javax.swing.JTextArea txtCicloVida;
     private javax.swing.JTextArea txtControlOperacional;
     private javax.swing.JTextArea txtLegislacion;
