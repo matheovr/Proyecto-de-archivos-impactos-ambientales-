@@ -4,7 +4,7 @@
 package control;
 
 import java.io.IOException;
-import java.util.Arrays;
+import modelo.ImpactoAmbiental;
 import vista.Matriz;
 
 /**
@@ -17,6 +17,8 @@ import vista.Matriz;
  */
 public class App {
     public static void main(String[] args) throws IOException {
+        Pdf pdf = new Pdf("UNPDF");
+        pdf.crearReporte(new ImpactoAmbiental());
         Matriz ventana = new Matriz();
         ventana.setVisible(true);
     }
