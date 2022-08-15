@@ -8,6 +8,7 @@ package vista;
 
 import modelo.ImpactoAmbiental;
 import control.Excel;
+import control.Pdf;
 import java.awt.Color;
 import java.awt.Container;
 import java.io.IOException;
@@ -25,16 +26,40 @@ import java.util.logging.Logger;
 public class Matriz extends javax.swing.JFrame {
     
     Excel archivoCsv;
+    Pdf pdf;
     
     /**
      * Creates new form form
+     * @throws java.io.IOException
      */
     public Matriz() throws IOException {
         archivoCsv = new Excel("data/input/dataOptions.csv");
+        pdf = new Pdf("Informe Impacto Ambiental ");
         initComponents();
         setLocationRelativeTo(this);
         Container c = this.getContentPane();
         c.setBackground(Color.white);
+    }
+    
+    public ImpactoAmbiental crearImpactoAmbiental(){
+        ImpactoAmbiental registro = new ImpactoAmbiental(txtProceso.getText(), txtSede.getText(), txtActividadAsociada.getText(), txtCicloVida.getText(), txtObservaciones.getText(), 
+                txtLegislacion.getText(), txtControlOperacional.getText(), txtAccionMejora.getText(), boxSituacion.getSelectedItem().toString(), boxAspectoAmbiental.getSelectedItem().toString(), 
+                boxImpactoAmbiental.getSelectedItem().toString(), boxRecursoAfectado.getSelectedItem().toString(), boxTipoImpacto.getSelectedItem().toString(), "", Integer.parseInt(boxAlcance.getSelectedItem().toString()),
+                Integer.parseInt(boxProbabilidad.getSelectedItem().toString()), Integer.parseInt(boxDuracion.getSelectedItem().toString()), Integer.parseInt(boxRecuperabilidad.getSelectedItem().toString()), 
+                Integer.parseInt(boxMagnitud.getSelectedItem().toString()), Integer.parseInt(boxNormatividad.getSelectedItem().toString()), 0, true, "");
+        
+        if (boxCumpleNormatividad.getSelectedItem().toString().equalsIgnoreCase("si")) {
+            registro.setCumpleNormatividad(true);
+        } else {
+            registro.setCumpleNormatividad(false);
+        }
+        registro.calcImportancia();
+        registro.calcCalificacion();
+        registro.calcValor();
+        
+        System.out.println(registro.toString());
+        
+        return registro;
     }
 
     /**
@@ -570,23 +595,9 @@ public class Matriz extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCargarExcelActionPerformed
 
     private void btnGenerarInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarInformeActionPerformed
-        // TODO add your handling code here:
-        ImpactoAmbiental registro = new ImpactoAmbiental(txtProceso.getText(), txtSede.getText(), txtActividadAsociada.getText(), txtCicloVida.getText(), txtObservaciones.getText(), 
-                txtLegislacion.getText(), txtControlOperacional.getText(), txtAccionMejora.getText(), boxSituacion.getSelectedItem().toString(), boxAspectoAmbiental.getSelectedItem().toString(), 
-                boxImpactoAmbiental.getSelectedItem().toString(), boxRecursoAfectado.getSelectedItem().toString(), boxTipoImpacto.getSelectedItem().toString(), "", Integer.parseInt(boxAlcance.getSelectedItem().toString()),
-                Integer.parseInt(boxProbabilidad.getSelectedItem().toString()), Integer.parseInt(boxDuracion.getSelectedItem().toString()), Integer.parseInt(boxRecuperabilidad.getSelectedItem().toString()), 
-                Integer.parseInt(boxMagnitud.getSelectedItem().toString()), Integer.parseInt(boxNormatividad.getSelectedItem().toString()), 0, true, "");
-        
-        if (boxCumpleNormatividad.getSelectedItem().toString().equalsIgnoreCase("si")) {
-            registro.setCumpleNormatividad(true);
-        } else {
-            registro.setCumpleNormatividad(false);
-        }
-        registro.calcImportancia();
-        registro.calcCalificacion();
-        registro.calcValor();
-        
-        System.out.println(registro.toString());
+        ImpactoAmbiental registroAmbiental = crearImpactoAmbiental();
+        pdf.crearReporte(registroAmbiental);
+        //archivoCsv.ExportarCSV(new List<>);
     }//GEN-LAST:event_btnGenerarInformeActionPerformed
 
     /**

@@ -3,16 +3,17 @@
  */
 package control;
 
-import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.BaseColor;
 import modelo.ImpactoAmbiental;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.Chunk;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import java.awt.HeadlessException;
 import java.io.FileOutputStream;
@@ -58,24 +59,10 @@ public class Pdf {
 
             documento.open();
             agregarInformacionInicial(documento);
-
-            PdfPTable tabla = new PdfPTable(6);
-            tabla.addCell(new Paragraph("PROCESO" + reporte.getProceso()));
-            tabla.addCell("SEDE");
-            tabla.addCell("ACTIVIDAD ASOCIADA AL ASPECTO");
-            tabla.addCell("CICLO DE VIDA DEL SERVICIO");
-            tabla.addCell("SITUACION");
-            tabla.addCell("ASPECTO AMBIENTAL ASOCIADO");
-            tabla.addCell("IMPACTO AMBIENTAL");
-            tabla.addCell("RECURSO AFECTADO");
-            tabla.addCell("OBSERVACIONES");
-            tabla.addCell("LEGISLACIÓN AMBIENTAL RELACIONADA");
-            tabla.addCell("CONTROL OPERACIONAL");
-            tabla.addCell("ACCIONES DE MEJORA DEL CONTROL OPERACIONAL");
+            agregarCuerpoPdf(documento, reporte);
             
-            JOptionPane.showMessageDialog(null, "Reporte creado\nRuta: " + ruta + "\\Documents\\" + titulo + ".pdf");
             documento.close();
-            
+            JOptionPane.showMessageDialog(null, "Reporte creado\nRuta: " + ruta + "\\Documents\\" + titulo + ".pdf");            
         } catch (DocumentException | HeadlessException | IOException e) {
 
         }
@@ -86,9 +73,9 @@ public class Pdf {
             PdfPTable tablaInformacionInicial = new PdfPTable(4);
             PdfPTable tablaInformacionObjetivo = new PdfPTable(1);
 
-            PdfPCell celdaResponsable = new PdfPCell(new Phrase("RESPONSABLE DEL DILIGENCIAMIENTO: " + RESPONSABLE));
-            PdfPCell celdaFechaAct = new PdfPCell(new Phrase("FECHA ÚLTIMA ACTUALIZACIÓN(dd/mm/aaaa): " + FECHAAACTUALIZACION));
-            PdfPCell celdaProceso = new PdfPCell(new Phrase("PROCESO: " + PROCESO));
+            PdfPCell celdaResponsable = crearCeldaModificada("RESPONSABLE DEL DILIGENCIAMIENTO: " + RESPONSABLE, FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1);
+            PdfPCell celdaFechaAct = crearCeldaModificada("FECHA ÚLTIMA ACTUALIZACIÓN (dd/mm/aaaa): " + FECHAAACTUALIZACION, FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1);
+            PdfPCell celdaProceso = crearCeldaModificada("PROCESO: " + PROCESO, FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1);
             celdaResponsable.setColspan(2);
             celdaResponsable.setVerticalAlignment(PdfPCell.ALIGN_MIDDLE);
             celdaFechaAct.setVerticalAlignment(PdfPCell.ALIGN_MIDDLE);
@@ -98,7 +85,7 @@ public class Pdf {
             tablaInformacionInicial.addCell(celdaResponsable);
             tablaInformacionInicial.addCell(celdaProceso);
 
-            tablaInformacionObjetivo.addCell(new Paragraph("Objetivo: " + OBJETIVO));
+            tablaInformacionObjetivo.addCell(crearCeldaModificada("Objetivo: " + OBJETIVO, FontFactory.getFont(BaseFont.HELVETICA, 10f), 1));
 
             tablaInformacionInicial.setWidthPercentage(100);
             tablaInformacionObjetivo.setWidthPercentage(100);
@@ -109,5 +96,91 @@ public class Pdf {
         } catch (DocumentException e) {
             System.out.println("Ha ocurrido un error con el documento pdf");
         }
+    }
+    
+    public void agregarCuerpoPdf(Document documento, ImpactoAmbiental reporte) {
+        
+        Font fuenteCeldas = FontFactory.getFont(BaseFont.HELVETICA, 9f);
+        BaseColor colorAzulCeldas = new BaseColor(73, 215, 255);
+        
+        PdfPTable tabla1 = new PdfPTable(8);
+        tabla1.addCell(crearCeldaModificada("PROCESO", colorAzulCeldas, fuenteCeldas, 2));
+        tabla1.addCell("SEDE");
+        tabla1.addCell("ACTIVIDAD ASOCIADA AL ASPECTO");
+        tabla1.addCell("CICLO DE VIDA DEL SERVICIO");
+        tabla1.addCell("SITUACION");
+        tabla1.addCell(crearCeldaModificada("ASPECTO AMBIENTAL ASOCIADO", colorAzulCeldas, fuenteCeldas, 2));
+        
+        PdfPTable tabla2 = new PdfPTable(6);
+        tabla2.addCell("IMPACTO AMBIENTAL"); //Ocupa 2
+        tabla2.addCell("RECURSO AFECTADO"); // Ocupa 1
+        tabla2.addCell("OBSERVACIONES"); //Ocupa 3
+        
+        PdfPTable tabla3 = new PdfPTable(11);
+        
+        PdfPTable tabla4 = new PdfPTable(8);
+        tabla4.addCell("LEGISLACIÓN AMBIENTAL RELACIONADA"); //Ocupa 4
+        tabla4.addCell("CUMPLE LA NORMATIVIDAD"); //Ocupa 1
+        tabla4.addCell("SIGNIFICANCIA"); //Ocupa 3
+        
+        PdfPTable tabla5 = new PdfPTable(2);
+        tabla5.addCell("CONTROL OPERACIONAL");
+        tabla5.addCell("ACCIONES DE MEJORA DEL CONTROL OPERACIONAL");
+        
+        tabla1.setWidthPercentage(100);
+        tabla2.setWidthPercentage(100);
+        tabla3.setWidthPercentage(100);
+        tabla4.setWidthPercentage(100);
+        tabla5.setWidthPercentage(100);
+        
+        try {
+            documento.add(new Paragraph(""));
+            documento.add(tabla1);
+            documento.add(new Paragraph(""));
+            documento.add(tabla2);
+            documento.add(new Paragraph(""));
+            documento.add(tabla3);
+            documento.add(new Paragraph(""));
+            documento.add(tabla4);
+            documento.add(new Paragraph(""));
+            documento.add(tabla5);
+        } catch (DocumentException e) {
+            System.out.println("Ocurrió un error al agregar el cuerpo del documento Pdf");
+        }
+
+    }
+    
+    public PdfPCell crearCeldaModificada(String titulo, BaseColor colorFondo, Font fuente, int columnas){
+        PdfPCell celda = new PdfPCell();
+        Phrase texto = new Phrase(titulo);
+        texto.setFont(fuente);
+        celda.setBackgroundColor(colorFondo);
+        celda.addElement(texto);
+        celda.setColspan(columnas);
+        celda.setHorizontalAlignment(PdfPCell.ALIGN_CENTER);
+        celda.setVerticalAlignment(PdfPCell.ALIGN_MIDDLE);
+        return celda;
+    }
+    
+    public PdfPCell crearCeldaModificada(String titulo, Font fuente, int columnas){
+        PdfPCell celda = new PdfPCell();
+        Phrase texto = new Phrase(titulo);
+        texto.setFont(fuente);
+        celda.addElement(texto);
+        celda.setColspan(columnas);
+        celda.setHorizontalAlignment(PdfPCell.ALIGN_CENTER);
+        celda.setVerticalAlignment(PdfPCell.ALIGN_MIDDLE);
+        return celda;
+    }
+    
+    public PdfPCell crearCeldaModificada(String titulo,BaseColor colorFondo, int columnas){
+        PdfPCell celda = new PdfPCell();
+        Phrase texto = new Phrase(titulo);
+        celda.setBackgroundColor(colorFondo);
+        celda.addElement(texto);
+        celda.setColspan(columnas);
+        celda.setHorizontalAlignment(PdfPCell.ALIGN_CENTER);
+        celda.setVerticalAlignment(PdfPCell.ALIGN_MIDDLE);
+        return celda;
     }
 }
