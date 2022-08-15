@@ -5,7 +5,7 @@ package modelo;
 
 /**
  * @author Ana Vega
- * @author Nicolás Carmona Cardona
+ * @author Nicolás Carmona
  * @author Mateo Velasquez 
  * @author Jose D. Gómez
  * @author Daniel Cano
@@ -13,7 +13,7 @@ package modelo;
  */
 public class ImpactoAmbiental {
     //Atributos
-    private String proposito;
+    private String proceso;
     private String sede;
     private String actividadAsociada;
     private String cicloDeVida;
@@ -47,7 +47,7 @@ public class ImpactoAmbiental {
     /**
      * Constructor full
      * 
-     * @param proposito
+     * @param proceso
      * @param sede
      * @param actividadAsociada
      * @param cicloDeVida
@@ -71,8 +71,8 @@ public class ImpactoAmbiental {
      * @param cumpleNormatividad
      * @param valor 
      */
-    public ImpactoAmbiental(String proposito, String sede, String actividadAsociada, String cicloDeVida, String observaciones, String legislacionAsociada, String controlOperacional, String accionesDeMejora, String situacion, String aspectoAmbiental, String impactoAmbiental, String recursoAfectado, String tipoDelImpacto, String calificacion, int alcance, int probabilidad, int duracion, int recuperabilidad, int magnitud, int normatividad, int importanciaDelImpacto, boolean cumpleNormatividad, String valor) {
-        this.proposito = proposito;
+    public ImpactoAmbiental(String proceso, String sede, String actividadAsociada, String cicloDeVida, String observaciones, String legislacionAsociada, String controlOperacional, String accionesDeMejora, String situacion, String aspectoAmbiental, String impactoAmbiental, String recursoAfectado, String tipoDelImpacto, String calificacion, int alcance, int probabilidad, int duracion, int recuperabilidad, int magnitud, int normatividad, int importanciaDelImpacto, boolean cumpleNormatividad, String valor) {
+        this.proceso = proceso;
         this.sede = sede;
         this.actividadAsociada = actividadAsociada;
         this.cicloDeVida = cicloDeVida;
@@ -97,12 +97,12 @@ public class ImpactoAmbiental {
         this.valor = valor;
     }
 
-    public String getProposito() {
-        return proposito;
+    public String getProceso() {
+        return proceso;
     }
 
-    public void setProposito(String proposito) {
-        this.proposito = proposito;
+    public void setProceso(String proceso) {
+        this.proceso = proceso;
     }
 
     public String getSede() {
@@ -288,7 +288,7 @@ public class ImpactoAmbiental {
      */
     @Override
     public String toString() {
-        return "ImpactoAmbiental{" + "proposito=" + proposito + ", sede=" + sede + ", actividadAsociada=" + actividadAsociada + ", cicloDeVida=" + cicloDeVida + ", observaciones=" + observaciones + ", legislacionAsociada=" + legislacionAsociada + ", controlOperacional=" + controlOperacional + ", accionesDeMejora=" + accionesDeMejora + ", situacion=" + situacion + ", aspectoAmbiental=" + aspectoAmbiental + ", impactoAmbiental=" + impactoAmbiental + ", recursoAfectado=" + recursoAfectado + ", tipoDelImpacto=" + tipoDelImpacto + ", calificacion=" + calificacion + ", alcance=" + alcance + ", probabilidad=" + probabilidad + ", duracion=" + duracion + ", recuperabilidad=" + recuperabilidad + ", magnitud=" + magnitud + ", normatividad=" + normatividad + ", importanciaDelImpacto=" + importanciaDelImpacto + ", cumpleNormatividad=" + cumpleNormatividad + ", valor=" + valor + '}';
+        return "ImpactoAmbiental{" + "proceso=" + proceso + ", sede=" + sede + ", actividadAsociada=" + actividadAsociada + ", cicloDeVida=" + cicloDeVida + ", observaciones=" + observaciones + ", legislacionAsociada=" + legislacionAsociada + ", controlOperacional=" + controlOperacional + ", accionesDeMejora=" + accionesDeMejora + ", situacion=" + situacion + ", aspectoAmbiental=" + aspectoAmbiental + ", impactoAmbiental=" + impactoAmbiental + ", recursoAfectado=" + recursoAfectado + ", tipoDelImpacto=" + tipoDelImpacto + ", calificacion=" + calificacion + ", alcance=" + alcance + ", probabilidad=" + probabilidad + ", duracion=" + duracion + ", recuperabilidad=" + recuperabilidad + ", magnitud=" + magnitud + ", normatividad=" + normatividad + ", importanciaDelImpacto=" + importanciaDelImpacto + ", cumpleNormatividad=" + cumpleNormatividad + ", valor=" + valor + '}';
     }
     
     public void calcImportancia(){

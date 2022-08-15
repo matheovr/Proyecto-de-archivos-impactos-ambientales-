@@ -3,11 +3,16 @@
  */
 package control;
 
+import com.csvreader.CsvWriter;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import modelo.ImpactoAmbiental;
+import vista.Matriz;
 
 /**
  * @author Ana Vega
@@ -23,6 +28,8 @@ public class Excel {
     private String[] opcionesAspectoAmbiental;
     private String[] opcionesImpactoAmbiental;
     private String[] opcionesRecursoAfectado;
+    private ImpactoAmbiental ImpactoAmbiental;
+    private Matriz Matriz;
 
     /**
      * Constructor vacio
@@ -110,6 +117,47 @@ public class Excel {
             opcionesAspectoAmbiental = opciones.get(0).split(";");
             opcionesImpactoAmbiental = opciones.get(1).split(";");
             opcionesRecursoAfectado = opciones.get(2).split(";");
+        }
+    }
+    
+    public void LlamarExportacionCVS() throws IOException{
+        List<ImpactoAmbiental> infoImpacto = new ArrayList<ImpactoAmbiental>();
+        infoImpacto.add(new ImpactoAmbiental());
+        ExportarCSV(infoImpacto);
+    }
+    
+    public void ExportarCSV(List<ImpactoAmbiental> infoImpacto) throws IOException{
+        String salidaArchivo = "InformacionDeImpactoAmbiental.csv";
+        boolean existe = new File(salidaArchivo).exists();
+        if(existe){
+            File archivoImpactoAmbiental = new File(salidaArchivo);
+            archivoImpactoAmbiental.delete();
+        }
+        try {
+            CsvWriter salidaCSV = new CsvWriter(new FileWriter(salidaArchivo, true),';');
+            salidaCSV.write("Proceso;"+Matriz.txtProceso.getText());
+            salidaCSV.write("Sede;"+Matriz.txtSede.getText());
+            salidaCSV.write("Actividad asociada al aspecto;"+Matriz.txtActividadAsociada.getText());
+            salidaCSV.write("Ciclo de vida del servicio;"+Matriz.txtCicloVida.getText());
+            salidaCSV.write("Observaciones;"+Matriz.txtObservaciones.getText());
+            salidaCSV.write("Legislacion ambiental relacionada;"+Matriz.txtLegislacion.getText());
+            salidaCSV.write("Control operacional;"+Matriz.txtControlOperacional.getText());
+            salidaCSV.write("Acciones de mejora del control operacional;"+Matriz.txtAccionMejora.getText());
+            salidaCSV.endRecord();
+            for(ImpactoAmbiental impacto : infoImpacto){
+                salidaCSV.write(impacto.getProceso());
+                salidaCSV.write(impacto.getSede());
+                salidaCSV.write(impacto.getActividadAsociada());
+                salidaCSV.write(impacto.getCicloDeVida());
+                salidaCSV.write(impacto.getObservaciones());
+                salidaCSV.write(impacto.getLegislacionAsociada());
+                salidaCSV.write(impacto.getControlOperacional());
+                salidaCSV.write(impacto.getAccionesDeMejora());
+                salidaCSV.endRecord();
+            }
+            salidaCSV.close();
+        } catch(IOException e) {
+            e.printStackTrace();
         }
     }
 }

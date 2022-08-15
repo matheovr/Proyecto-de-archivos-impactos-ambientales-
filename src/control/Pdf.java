@@ -60,7 +60,7 @@ public class Pdf {
             documento.open();
             crearEncabezado(documento);
             PdfPTable tabla = new PdfPTable(6);
-            tabla.addCell(new Paragraph("PROCESO" + reporte.getProposito()));
+            tabla.addCell(new Paragraph("PROCESO" + reporte.getProceso()));
             tabla.addCell("SEDE");
             tabla.addCell("ACTIVIDAD ASOCIADA AL ASPECTO");
             tabla.addCell("CICLO DE VIDA DEL SERVICIO");

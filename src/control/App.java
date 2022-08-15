@@ -9,7 +9,7 @@ import vista.Matriz;
 
 /**
  * @author Ana Vega
- * @author Nicolás Carmona Cardona
+ * @author Nicolás Carmona
  * @author Mateo Velasquez 
  * @author Jose D. Gómez
  * @author Daniel Cano

@@ -345,7 +345,7 @@ public class Matriz extends javax.swing.JFrame {
         btnAgregarRegistro.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         btnAgregarRegistro.setText("AGREGAR REGISTRO FOTOGRÁFICO");
         btnAgregarRegistro.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        btnAgregarRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregarRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAgregarRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarRegistroActionPerformed(evt);
@@ -356,7 +356,7 @@ public class Matriz extends javax.swing.JFrame {
         btnCargarExcel.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
         btnCargarExcel.setText("CARGAR ARCHIVO DE EXCEL");
         btnCargarExcel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        btnCargarExcel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCargarExcel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCargarExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarExcelActionPerformed(evt);
@@ -367,7 +367,7 @@ public class Matriz extends javax.swing.JFrame {
         btnGenerarInforme.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
         btnGenerarInforme.setText("GENERAR INFORME FINAL");
         btnGenerarInforme.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        btnGenerarInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGenerarInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnGenerarInforme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarInformeActionPerformed(evt);
@@ -677,13 +677,13 @@ public class Matriz extends javax.swing.JFrame {
     private javax.swing.JLabel lblTipoImpacto;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblValoracionImpactos;
-    private javax.swing.JTextArea txtAccionMejora;
-    private javax.swing.JTextArea txtActividadAsociada;
-    private javax.swing.JTextArea txtCicloVida;
-    private javax.swing.JTextArea txtControlOperacional;
-    private javax.swing.JTextArea txtLegislacion;
-    private javax.swing.JTextArea txtObservaciones;
-    private javax.swing.JTextArea txtProceso;
-    private javax.swing.JTextArea txtSede;
+    public javax.swing.JTextArea txtAccionMejora;
+    public javax.swing.JTextArea txtActividadAsociada;
+    public javax.swing.JTextArea txtCicloVida;
+    public javax.swing.JTextArea txtControlOperacional;
+    public javax.swing.JTextArea txtLegislacion;
+    public javax.swing.JTextArea txtObservaciones;
+    public javax.swing.JTextArea txtProceso;
+    public javax.swing.JTextArea txtSede;
     // End of variables declaration//GEN-END:variables
 }
