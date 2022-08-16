@@ -297,25 +297,25 @@ public class ImpactoAmbiental {
     
     public void calcValor(){
         if (this.importanciaDelImpacto>125000 && this.importanciaDelImpacto<=1000000){
-            this.valor="Alta";
+            this.valor="ALTA";
         }
             else if (this.importanciaDelImpacto>25000 && this.importanciaDelImpacto<=125000){
-                this.valor="Moderada";
+                this.valor="MODERADA";
             }
                 else if (this.importanciaDelImpacto>1 && this.importanciaDelImpacto<=25000){
-                    this.valor="Baja";
+                    this.valor="BAJA";
                 }
     }
     
     public void calcCalificacion(){
         if ((this.importanciaDelImpacto>25000 && this.cumpleNormatividad==true) || (this.importanciaDelImpacto>25000 && this.cumpleNormatividad==false)){
-            this.calificacion="Significativo";
+            this.calificacion="SIGNIFICATIVO";
         }
             else if (this.importanciaDelImpacto<=25000 && this.cumpleNormatividad==true){
-                this.calificacion="No significativo";
+                this.calificacion="NO SIGNIFICATIVO";
             }
                 else if (this.importanciaDelImpacto<=25000 && this.cumpleNormatividad==false){
-                    this.calificacion="Significativo";
+                    this.calificacion="SIGNIFICATIVO";
                 }
     }
 }
