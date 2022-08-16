@@ -9,6 +9,7 @@ package vista;
 import modelo.ImpactoAmbiental;
 import control.Excel;
 import control.Pdf;
+import control.RegistroFotografico;
 import java.awt.Color;
 import java.awt.Container;
 import java.io.IOException;
@@ -27,6 +28,7 @@ public class Matriz extends javax.swing.JFrame {
     
     Excel archivoCsv;
     Pdf pdf;
+    RegistroFotografico registroFotografico;
     
     /**
      * Creates new form form
@@ -35,6 +37,7 @@ public class Matriz extends javax.swing.JFrame {
     public Matriz() throws IOException {
         archivoCsv = new Excel("data/input/dataOptions.csv");
         pdf = new Pdf("Informe Impacto Ambiental ");
+        registroFotografico = new RegistroFotografico();
         initComponents();
         setLocationRelativeTo(this);
         Container c = this.getContentPane();
@@ -46,7 +49,7 @@ public class Matriz extends javax.swing.JFrame {
                 txtLegislacion.getText(), txtControlOperacional.getText(), txtAccionMejora.getText(), boxSituacion.getSelectedItem().toString(), boxAspectoAmbiental.getSelectedItem().toString(), 
                 boxImpactoAmbiental.getSelectedItem().toString(), boxRecursoAfectado.getSelectedItem().toString(), boxTipoImpacto.getSelectedItem().toString(), "", Integer.parseInt(boxAlcance.getSelectedItem().toString()),
                 Integer.parseInt(boxProbabilidad.getSelectedItem().toString()), Integer.parseInt(boxDuracion.getSelectedItem().toString()), Integer.parseInt(boxRecuperabilidad.getSelectedItem().toString()), 
-                Integer.parseInt(boxMagnitud.getSelectedItem().toString()), Integer.parseInt(boxNormatividad.getSelectedItem().toString()), 0, true, "");
+                Integer.parseInt(boxMagnitud.getSelectedItem().toString()), Integer.parseInt(boxNormatividad.getSelectedItem().toString()), 0, true, "", registroFotografico.getImagenes());
         
         if (boxCumpleNormatividad.getSelectedItem().toString().equalsIgnoreCase("si")) {
             registro.setCumpleNormatividad(true);
@@ -630,7 +633,7 @@ public class Matriz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarRegistroActionPerformed
-        // TODO add your handling code here:
+        registroFotografico.agregarRegistroFotografico();
     }//GEN-LAST:event_btnAgregarRegistroActionPerformed
 
     private void btnCargarExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarExcelActionPerformed
@@ -640,6 +643,7 @@ public class Matriz extends javax.swing.JFrame {
     private void btnGenerarInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarInformeActionPerformed
         ImpactoAmbiental registroAmbiental = crearImpactoAmbiental();
         pdf.crearReporte(registroAmbiental);
+        registroFotografico.limpiarRegistrosFotograficos();
         limpiarCampos();
         //archivoCsv.ExportarCSV(new List<>);
     }//GEN-LAST:event_btnGenerarInformeActionPerformed

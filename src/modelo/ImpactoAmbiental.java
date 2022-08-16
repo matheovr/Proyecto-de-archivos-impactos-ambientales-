@@ -3,6 +3,9 @@
  */
 package modelo;
 
+import com.itextpdf.text.Image;
+import java.util.ArrayList;
+
 /**
  * @author Ana Vega
  * @author Nicolás Carmona
@@ -36,7 +39,7 @@ public class ImpactoAmbiental {
     private int normatividad;
     private int importanciaDelImpacto;
     private boolean cumpleNormatividad;
-    //private Imagen registroFotografico;
+    private ArrayList<Image> registrosFotograficos;
 
     /**
      * Constructor Vacio
@@ -69,9 +72,10 @@ public class ImpactoAmbiental {
      * @param normatividad
      * @param importanciaDelImpacto
      * @param cumpleNormatividad
-     * @param valor 
+     * @param valor
+     * @param registrosFotograficos 
      */
-    public ImpactoAmbiental(String proceso, String sede, String actividadAsociada, String cicloDeVida, String observaciones, String legislacionAsociada, String controlOperacional, String accionesDeMejora, String situacion, String aspectoAmbiental, String impactoAmbiental, String recursoAfectado, String tipoDelImpacto, String calificacion, int alcance, int probabilidad, int duracion, int recuperabilidad, int magnitud, int normatividad, int importanciaDelImpacto, boolean cumpleNormatividad, String valor) {
+    public ImpactoAmbiental(String proceso, String sede, String actividadAsociada, String cicloDeVida, String observaciones, String legislacionAsociada, String controlOperacional, String accionesDeMejora, String situacion, String aspectoAmbiental, String impactoAmbiental, String recursoAfectado, String tipoDelImpacto, String calificacion, int alcance, int probabilidad, int duracion, int recuperabilidad, int magnitud, int normatividad, int importanciaDelImpacto, boolean cumpleNormatividad, String valor, ArrayList<Image> registrosFotograficos) {
         this.proceso = proceso;
         this.sede = sede;
         this.actividadAsociada = actividadAsociada;
@@ -95,6 +99,7 @@ public class ImpactoAmbiental {
         this.importanciaDelImpacto = importanciaDelImpacto;
         this.cumpleNormatividad = cumpleNormatividad;
         this.valor = valor;
+        this.registrosFotograficos = registrosFotograficos;
     }
 
     public String getProceso() {
@@ -279,6 +284,14 @@ public class ImpactoAmbiental {
 
     public void setValor(String valor) {
         this.valor = valor;
+    }
+
+    public ArrayList<Image> getRegistrosFotograficos() {
+        return registrosFotograficos;
+    }
+
+    public void setRegistrosFotograficos(ArrayList<Image> registrosFotograficos) {
+        this.registrosFotograficos = registrosFotograficos;
     }
 
     /**

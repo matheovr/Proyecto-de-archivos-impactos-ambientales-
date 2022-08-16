@@ -13,12 +13,14 @@ import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import java.awt.HeadlessException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -68,7 +70,9 @@ public class Pdf {
             agregarInformacionInicial(documento);
             documento.add(new Paragraph(" "));
             agregarCuerpoPdf(documento, reporte);
-            documento.newPage();
+            documento.add(new Paragraph(" "));
+            agregarRegistrosFotograficos(documento, reporte.getRegistrosFotograficos());
+            documento.add(new Paragraph(" "));
             agregarInformacionControlCambios(documento);
             documento.add(new Paragraph(" "));
             agregarInformacionFinal(documento);
@@ -250,6 +254,23 @@ public class Pdf {
             System.out.println("Ocurrió un error al agregar el cuerpo del documento Pdf");
         }
 
+    }
+    
+    public void agregarRegistrosFotograficos(Document documento, ArrayList<Image> registrosFotograficos){
+        PdfPTable tablaImagenes = new PdfPTable(1);
+        tablaImagenes.setWidthPercentage(100);
+        if(!registrosFotograficos.isEmpty()){
+            tablaImagenes.addCell(crearCeldaModificada("REGITROS FOTOGRÁFICOS", colorAzulCeldas, fuenteCeldasTitulo, 1));
+        }
+        for (Image registroFotografico : registrosFotograficos) {
+            registroFotografico.scaleAbsolute(50, 50);
+            tablaImagenes.addCell(registroFotografico);
+        }
+        try {
+            documento.add(tablaImagenes);
+        } catch (DocumentException e) {
+            System.out.println("Ocurrió un error al agregar los registros fotográficos al documento");
+        }
     }
 
     public PdfPCell crearCeldaModificada(String titulo, BaseColor colorFondo, Font fuente, int columnas) {

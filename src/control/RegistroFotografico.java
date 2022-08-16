@@ -5,6 +5,8 @@
  */
 package control;
 
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.Image;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -20,18 +22,32 @@ import javax.swing.JOptionPane;
  * @author jpag0
  */
 public class RegistroFotografico {
-    JFileChooser seleccionar = new JFileChooser();
-    File archivo;
-    byte[] imagen;
-    FileInputStream entrada;
-    FileOutputStream salida;
+    private JFileChooser seleccionar;
+    private File archivo;
+    private byte[] imagen;
+    private FileInputStream entrada;
+    private FileOutputStream salida;
+    private ArrayList<Image> imagenes;
    
     public RegistroFotografico(){
-        
+        seleccionar = new JFileChooser();
+        imagenes = new ArrayList();
     }
-    public static void main(String[] args) {
-        
+
+    public ArrayList<Image> getImagenes() {
+        return imagenes;
     }
+
+    public void setImagenes(ArrayList<Image> imagenes) {
+        this.imagenes = imagenes;
+    }
+    
+
+    /**
+     * Método creado para seleccionar el archivo que queremos subir
+     * @param archivo
+     * @return Retorna la imagen seleccionada para luego agregarla al registro
+     */
     public byte [] AbrirImagen(File archivo){
         byte[] imagen = new byte[1024*100];
         try{
@@ -43,20 +59,29 @@ public class RegistroFotografico {
             return imagen;
     }
 
+    /**
+     * Método que nos sirve para guardar la imagen que seleccionamos
+     * @param archivo
+     * @param byteImg
+     * @return Nos retorna si la imagen se guardó
+     */    
     public String GuardarImagen(File archivo, byte[] byteImg){
         String respuesta = null;
         try {
             salida = new FileOutputStream(archivo);
             salida.write(byteImg);
             respuesta = "La imagen se guardó correctamente";
-            
         } catch (Exception e) {
         }
         return respuesta;
         
     }
     
-      private void btnAgregarRegistro(java.awt.Event evt){
+    /**
+     * Se agraga la imagen previamente seleccionada y guardada para esta agregarla al pdf
+     * 
+     */
+      public void agregarRegistroFotografico(){
           if(seleccionar.showDialog(null, null)==JFileChooser.APPROVE_OPTION){
               archivo=seleccionar.getSelectedFile();
               if(archivo.canRead()){
@@ -66,11 +91,16 @@ public class RegistroFotografico {
                   JOptionPane.showMessageDialog(null, "Archivo no compatible");
               }
               if(seleccionar.showDialog(null, "Agregar Registro Fotográfico")==JFileChooser.APPROVE_OPTION){
-                  ArrayList<File> imagenes = new ArrayList();
                   archivo=seleccionar.getSelectedFile();
                   if(archivo.getName().endsWith("jpg")||archivo.getName().endsWith("png")||archivo.getName().endsWith("gif"));
                   String respuesta=GuardarImagen(archivo, imagen);
-                  imagenes.add(archivo);
+                  Image imagePdf = null;
+                  try {
+                      System.out.println(archivo.getAbsolutePath());
+                      imagePdf = Image.getInstance(archivo.getAbsolutePath());
+                      imagenes.add(imagePdf);
+                  } catch (BadElementException | IOException e) {
+                  }
                   if(respuesta!=null){
                       JOptionPane.showMessageDialog(null, respuesta);
                       
@@ -83,5 +113,10 @@ public class RegistroFotografico {
    
           }
           
-      }      
+      }
+      
+      public void limpiarRegistrosFotograficos(){
+          imagenes.clear();
+      }
+      
 }
