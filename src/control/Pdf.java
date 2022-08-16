@@ -34,6 +34,9 @@ public class Pdf {
     private final String PROCESO = "SGA" ;
     private final String OBJETIVO = "Realizar la identificación de los aspectos y valoración de los impactos ambientales que se generan por el desarrollo de las actividades del IDEAM, en todas sus sedes, con el fin de determinar su significancia y establecer acciones de control para prevenirlos, mitigarlos, corregirlos y/o compensarlos.";
     private final String FECHAAACTUALIZACION = "30/09/2021";
+    private final String CONTROLCAMBIOS = "CONTROL DE CAMBIOS";
+    private final String VERSION = "3";
+    private final String DESCRIPCION = "Cambio de metodología de valoración teniendo como base el ciclo de vida del servicio o producto. Se incluye el cumplimiento normativo, como variable fundamental para la valoración de impacto ambiental.";  
     private int numeroPaginas;
     private String fecha;
     private String titulo;
@@ -59,7 +62,12 @@ public class Pdf {
 
             documento.open();
             agregarInformacionInicial(documento);
+            documento.add(new Paragraph(" "));
             agregarCuerpoPdf(documento, reporte);
+            documento.add(new Paragraph(" "));
+            agregarInformacionControlCambios(documento);
+            documento.add(new Paragraph(" "));
+            agregarInformacionFinal(documento);
             
             documento.close();
             JOptionPane.showMessageDialog(null, "Reporte creado\nRuta: " + ruta + "\\Documents\\" + titulo + ".pdf");            
@@ -93,6 +101,77 @@ public class Pdf {
             documento.add(tablaInformacionInicial);
             documento.add(new Paragraph(" "));
             documento.add(tablaInformacionObjetivo);
+        } catch (DocumentException e) {
+            System.out.println("Ha ocurrido un error con el documento pdf");
+        }
+    }
+    
+    public void agregarInformacionControlCambios(Document documento){
+        try {
+        
+        PdfPTable tablaControlDeCambios = new PdfPTable(1);
+        PdfPCell celdaControlDeCambios = crearCeldaModificada(CONTROLCAMBIOS, BaseColor.WHITE, 1) ;
+        tablaControlDeCambios.addCell(celdaControlDeCambios);
+        
+        tablaControlDeCambios.setWidthPercentage(100);
+            
+        
+        PdfPTable tablaInternaControl = new PdfPTable(3);
+        PdfPCell celdaInternaVersion = crearCeldaModificada("VERSION", BaseColor.WHITE, 1);
+        PdfPCell celdaInternaFecha = crearCeldaModificada("FECHA", BaseColor.WHITE, 1);
+        PdfPCell celdaInternaDescripcion = crearCeldaModificada("DESCRIPCIÓN", BaseColor.WHITE, 1);
+        
+        tablaInternaControl.addCell(celdaInternaVersion);
+        tablaInternaControl.addCell(celdaInternaFecha);
+        tablaInternaControl.addCell(celdaInternaDescripcion);
+        
+        tablaInternaControl.setWidthPercentage(100);
+        
+        PdfPTable tablaIngresoControl = new PdfPTable(3);
+        PdfPCell celdaIngresoVersion = crearCeldaModificada(VERSION, BaseColor.WHITE, 1);
+        PdfPCell celdaIngresoFecha = crearCeldaModificada(FECHAAACTUALIZACION, BaseColor.WHITE, 1);
+        PdfPCell celdaIngresoDescripcion = crearCeldaModificada(DESCRIPCION, BaseColor.WHITE, 1);
+        
+        tablaIngresoControl.addCell(celdaIngresoVersion);
+        tablaIngresoControl.addCell(celdaIngresoFecha);
+        tablaIngresoControl.addCell(celdaIngresoDescripcion);
+        tablaIngresoControl.setWidthPercentage(100);
+        
+        documento.add(tablaControlDeCambios);
+        documento.add(celdaControlDeCambios);
+        documento.add(tablaInternaControl);
+        documento.add(tablaIngresoControl);
+        } catch (DocumentException e) {
+            System.out.println("Ha ocurrido un error con el documento pdf");
+        }
+        
+    }
+    
+    public void agregarInformacionFinal(Document documento){
+        try{
+            
+        PdfPTable tablaFinal = new PdfPTable(3);
+        PdfPCell celdaElaboro = crearCeldaModificada("ELABORÓ:", BaseColor.WHITE, 1);
+        PdfPCell celdaReviso = crearCeldaModificada("REVISÓ:", BaseColor.WHITE, 1);
+        PdfPCell celdaAprobo = crearCeldaModificada("APROBÓ:", BaseColor.WHITE, 1);
+        
+        tablaFinal.addCell(celdaElaboro);
+        tablaFinal.addCell(celdaReviso);
+        tablaFinal.addCell(celdaAprobo);
+        tablaFinal.setWidthPercentage(100);
+        
+        PdfPTable tablaIngresoFinal = new PdfPTable(3);
+        PdfPCell celdaIngresoElaboro = crearCeldaModificada(RESPONSABLE + "\n" + "Contratista" + "\n" + "Oficina Asesora de Planeación", BaseColor.WHITE, 1);
+        PdfPCell celdaIngresoReviso = crearCeldaModificada("Telly de Jesús" + "\n" + "Month" + "\n" + "Jefe Oficina Asesora de Planeación", BaseColor.WHITE, 1);
+        PdfPCell celdaIngresoAprobo = crearCeldaModificada("Telly de Jesus Month" + "\n" + "Jefe Oficina Asesora de Planeación", BaseColor.WHITE, 1);
+        
+        tablaIngresoFinal.addCell(celdaIngresoElaboro);
+        tablaIngresoFinal.addCell(celdaIngresoReviso);
+        tablaIngresoFinal.addCell(celdaIngresoAprobo);
+        tablaIngresoFinal.setWidthPercentage(100);
+        
+        documento.add(tablaFinal);
+        documento.add(tablaIngresoFinal);
         } catch (DocumentException e) {
             System.out.println("Ha ocurrido un error con el documento pdf");
         }
