@@ -1,13 +1,16 @@
 /*
-*
+* Clase dedicada al encabezado de las páginas del documento Pdf
 */
 package control;
 
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Image;
-import com.itextpdf.text.Phrase;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfPageEventHelper;
@@ -31,6 +34,8 @@ public class EncabezadoPdf extends PdfPageEventHelper{
     private final int VERSION = 3;
     private int paginaActual = 0;
     private String fecha;
+    private Font fuenteCeldas = FontFactory.getFont(BaseFont.HELVETICA, 9f);
+    private Font fuenteCeldasTitulo = FontFactory.getFont(BaseFont.HELVETICA_BOLD, 12f);
     
     public EncabezadoPdf(LocalDate fechaLocal) {
         fecha = fechaLocal.getDayOfMonth() + "/"  + fechaLocal.getMonthValue() +  "/" + fechaLocal.getYear();
@@ -39,6 +44,12 @@ public class EncabezadoPdf extends PdfPageEventHelper{
     public EncabezadoPdf(){
     }
     
+    /**
+     * Sobreescribe el método asociado al evento de crear una nueva página, agregando un contenido como encabezado cada que se crea una página nueva
+     * 
+     * @param writer
+     * @param document 
+     */
     @Override
     public void onStartPage(PdfWriter writer, Document document){
         paginaActual = document.getPageNumber();
@@ -56,15 +67,13 @@ public class EncabezadoPdf extends PdfPageEventHelper{
         
         tablaEncabezado.setWidthPercentage(100);
        
-        PdfPCell celdaTitulo = new PdfPCell(new Phrase(TITULO));
-        PdfPCell celdaCodigo = new PdfPCell(new Phrase("Código: " + CODIGO));
-        PdfPCell celdaVersion = new PdfPCell(new Phrase("Versión: " + VERSION));
-        PdfPCell celdaFecha = new PdfPCell(new Phrase("Fecha: " + fecha));
-        PdfPCell celdaPagina = new PdfPCell(new Phrase("Página: " + paginaActual));
+        PdfPCell celdaTitulo = crearCeldaModificada(TITULO, fuenteCeldasTitulo, 2, Paragraph.ALIGN_CENTER);
+        PdfPCell celdaCodigo = crearCeldaModificada("Código: " + CODIGO, fuenteCeldas, 1, Paragraph.ALIGN_LEFT);
+        PdfPCell celdaVersion = crearCeldaModificada("Versión: " + VERSION, fuenteCeldas, 1, Paragraph.ALIGN_LEFT);
+        PdfPCell celdaFecha = crearCeldaModificada("Fecha: " + fecha, fuenteCeldas, 1, Paragraph.ALIGN_LEFT);
+        PdfPCell celdaPagina = crearCeldaModificada("Página: " + paginaActual, fuenteCeldas, 1, Paragraph.ALIGN_LEFT);
         
-        celdaTitulo.setColspan(2);
         celdaTitulo.setVerticalAlignment(PdfPCell.ALIGN_MIDDLE);
-        celdaTitulo.setHorizontalAlignment(PdfPCell.ALIGN_CENTER);
         
         celdaCodigo.setBorder(0);
         celdaVersion.setBorder(0);
@@ -74,11 +83,6 @@ public class EncabezadoPdf extends PdfPageEventHelper{
         celdaCodigo.setBorderWidthBottom(1);
         celdaVersion.setBorderWidthBottom(1);
         celdaFecha.setBorderWidthBottom(1);
-    
-        celdaCodigo.setPadding(6);
-        celdaVersion.setPadding(6);
-        celdaFecha.setPadding(6);
-        celdaPagina.setPadding(6);
                 
         tablaInterna.addCell(celdaCodigo);
         tablaInterna.addCell(celdaVersion);
@@ -97,11 +101,32 @@ public class EncabezadoPdf extends PdfPageEventHelper{
             
             document.add(imagen);
             document.add(tablaEncabezado);
-            document.add(new Phrase(" "));  
+            document.add(new Paragraph(" "));  
         
         } catch (DocumentException ex) {
             Logger.getLogger(EncabezadoPdf.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+    
+    
+    /**
+     * Este método permite modificar celdas con unas características como su contenido, su fuente, tamaño y alineación.
+     * 
+     * @param titulo
+     * @param fuente
+     * @param columnas
+     * @param align
+     * @return Retorna una PdfPCell con modificaciones de estilo según lo requerido en el pdf del IDEAM y los valores pasados como parámetos
+     */
+    public PdfPCell crearCeldaModificada(String titulo, Font fuente, int columnas, int align) {
+        PdfPCell celda = new PdfPCell();
+        Paragraph texto = new Paragraph(titulo);
+        texto.setFont(fuente);
+        texto.setAlignment(align);
+        celda.addElement(texto);
+        celda.setColspan(columnas);
+        celda.setVerticalAlignment(PdfPCell.ALIGN_MIDDLE);
+        return celda;
     }
 }
