@@ -33,14 +33,14 @@ public class RegistroFotografico {
         
     }
     public byte [] AbrirImagen(File archivo){
-        byte[] imagenes = new byte[1024*100];
+        byte[] imagen = new byte[1024*100];
         try{
             entrada= new FileInputStream(archivo);
-            entrada.read(imagenes);
+            entrada.read(imagen);
             
         }catch (Exception e){
         }
-            return imagenes;
+            return imagen;
     }
 
     public String GuardarImagen(File archivo, byte[] byteImg){
