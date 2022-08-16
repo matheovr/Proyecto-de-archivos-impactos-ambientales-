@@ -33,7 +33,7 @@ public class Pdf {
     private final String RESPONSABLE = "Ana Milena Alvarez";
     private final String PROCESO = "SGA" ;
     private final String OBJETIVO = "Realizar la identificación de los aspectos y valoración de los impactos ambientales que se generan por el desarrollo de las actividades del IDEAM, en todas sus sedes, con el fin de determinar su significancia y establecer acciones de control para prevenirlos, mitigarlos, corregirlos y/o compensarlos.";
-    private final String FECHAAACTUALIZACION = "30/09/2021";
+    private String FECHAAACTUALIZACION;
     private final String CONTROLCAMBIOS = "CONTROL DE CAMBIOS";
     private final String VERSION = "3";
     private final String DESCRIPCION = "Cambio de metodología de valoración teniendo como base el ciclo de vida del servicio o producto. Se incluye el cumplimiento normativo, como variable fundamental para la valoración de impacto ambiental.";  
@@ -44,6 +44,7 @@ public class Pdf {
     public Pdf(String titulo) {
         LocalDate fechaLocal = LocalDate.now();
         fecha = String.valueOf(fechaLocal.getDayOfMonth())+ "-" + String.valueOf(fechaLocal.getMonthValue()) + "-" + String.valueOf(fechaLocal.getYear());
+        FECHAAACTUALIZACION = String.valueOf(fechaLocal.getDayOfMonth())+ "/" + String.valueOf(fechaLocal.getMonthValue()) + "/" + String.valueOf(fechaLocal.getYear());
         this.titulo = titulo + fecha;
     }
     
@@ -64,7 +65,7 @@ public class Pdf {
             agregarInformacionInicial(documento);
             documento.add(new Paragraph(" "));
             agregarCuerpoPdf(documento, reporte);
-            documento.add(new Paragraph(" "));
+            documento.newPage();
             agregarInformacionControlCambios(documento);
             documento.add(new Paragraph(" "));
             agregarInformacionFinal(documento);
@@ -244,15 +245,14 @@ public class Pdf {
         tabla5.setWidthPercentage(100);
         
         try {
-            documento.add(new Paragraph(""));
             documento.add(tabla1);
-            documento.add(new Paragraph(""));
+            documento.add(new Paragraph(" "));
             documento.add(tabla2);
-            documento.add(new Paragraph(""));
+            documento.add(new Paragraph(" "));
             documento.add(tabla3);
-            documento.add(new Paragraph(""));
+            documento.add(new Paragraph(" "));
             documento.add(tabla4);
-            documento.add(new Paragraph(""));
+            documento.add(new Paragraph(" "));
             documento.add(tabla5);
         } catch (DocumentException e) {
             System.out.println("Ocurrió un error al agregar el cuerpo del documento Pdf");
