@@ -42,6 +42,7 @@ public class Matriz extends javax.swing.JFrame {
         setLocationRelativeTo(this);
         Container c = this.getContentPane();
         c.setBackground(Color.white);
+        jScrollPane6.getVerticalScrollBar().setUnitIncrement(10);
     }
     
     public ImpactoAmbiental crearImpactoAmbiental(){

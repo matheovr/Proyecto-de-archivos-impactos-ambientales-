@@ -31,7 +31,7 @@ import javax.swing.JOptionPane;
  * @author Daniel Cano
  * @author Juan P. Arango
  */
-public class Pdf {
+public class Pdf implements PdfIF{
 
     private final String RESPONSABLE = "Ana Milena Alvarez";
     private final String REVISOR = "Telly de Jesús Month";
@@ -56,6 +56,7 @@ public class Pdf {
     public Pdf() {
     }
 
+    @Override
     public void crearReporte(ImpactoAmbiental reporte) {
         LocalDate fechaLocal = LocalDate.now();
         String ruta = System.getProperty("user.home");
@@ -84,6 +85,7 @@ public class Pdf {
         }
     }
 
+    @Override
     public void agregarInformacionInicial(Document documento) {
         try {
             PdfPTable tablaInformacionInicial = new PdfPTable(4);
@@ -114,6 +116,7 @@ public class Pdf {
         }
     }
 
+    @Override
     public void agregarInformacionControlCambios(Document documento) {
         try {
 
@@ -143,6 +146,7 @@ public class Pdf {
 
     }
 
+    @Override
     public void agregarInformacionFinal(Document documento) {
         try {
 
@@ -169,6 +173,7 @@ public class Pdf {
         }
     }
 
+    @Override
     public void agregarCuerpoPdf(Document documento, ImpactoAmbiental reporte) {
 
         PdfPTable tablaInfoCuerpo1 = new PdfPTable(8);
@@ -273,6 +278,7 @@ public class Pdf {
         }
     }
 
+    @Override
     public PdfPCell crearCeldaModificada(String titulo, BaseColor colorFondo, Font fuente, int columnas) {
         PdfPCell celda = new PdfPCell();
         Paragraph texto = new Paragraph(titulo);
@@ -285,6 +291,7 @@ public class Pdf {
         return celda;
     }
 
+    @Override
     public PdfPCell crearCeldaModificada(String titulo, Font fuente, int columnas) {
         PdfPCell celda = new PdfPCell();
         Paragraph texto = new Paragraph(titulo);
@@ -296,6 +303,7 @@ public class Pdf {
         return celda;
     }
 
+    @Override
     public PdfPCell crearCeldaModificada(String titulo, BaseColor colorFondo, int columnas) {
         PdfPCell celda = new PdfPCell();
         Paragraph texto = new Paragraph(titulo);
