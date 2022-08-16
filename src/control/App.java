@@ -18,7 +18,7 @@ import vista.Matriz;
 public class App {
     public static void main(String[] args) throws IOException {
         Pdf pdf = new Pdf("Un Pdf de prueba");
-        pdf.crearReporte(new ImpactoAmbiental());
+        //pdf.crearReporte(new ImpactoAmbiental());
         Matriz ventana = new Matriz();
         ventana.setVisible(true);
     }

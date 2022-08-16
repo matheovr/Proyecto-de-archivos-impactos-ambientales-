@@ -37,7 +37,7 @@ public class Pdf {
     private int numeroPaginas;
     private String fecha;
     private String titulo;
-            
+
     public Pdf(String titulo) {
         LocalDate fechaLocal = LocalDate.now();
         fecha = String.valueOf(fechaLocal.getDayOfMonth())+ "-" + String.valueOf(fechaLocal.getMonthValue()) + "-" + String.valueOf(fechaLocal.getYear());
@@ -105,27 +105,58 @@ public class Pdf {
         
         PdfPTable tabla1 = new PdfPTable(8);
         tabla1.addCell(crearCeldaModificada("PROCESO", colorAzulCeldas, fuenteCeldas, 2));
-        tabla1.addCell("SEDE");
-        tabla1.addCell("ACTIVIDAD ASOCIADA AL ASPECTO");
-        tabla1.addCell("CICLO DE VIDA DEL SERVICIO");
-        tabla1.addCell("SITUACION");
+        tabla1.addCell(crearCeldaModificada("SEDE", colorAzulCeldas, fuenteCeldas, 1));
+        tabla1.addCell(crearCeldaModificada("ACTIVIDAD ASOCIADA AL ASPECTO", colorAzulCeldas, fuenteCeldas, 1));
+        tabla1.addCell(crearCeldaModificada("CICLO DE VIDA DEL SERVICIO", colorAzulCeldas, fuenteCeldas, 1));
+        tabla1.addCell(crearCeldaModificada("SITUACIÓN", colorAzulCeldas, fuenteCeldas, 1));
         tabla1.addCell(crearCeldaModificada("ASPECTO AMBIENTAL ASOCIADO", colorAzulCeldas, fuenteCeldas, 2));
-        
+        tabla1.addCell(crearCeldaModificada(reporte.getProceso(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 2));
+        tabla1.addCell(crearCeldaModificada(reporte.getSede(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla1.addCell(crearCeldaModificada(reporte.getActividadAsociada(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla1.addCell(crearCeldaModificada(reporte.getCicloDeVida(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla1.addCell(crearCeldaModificada(reporte.getSituacion(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla1.addCell(crearCeldaModificada(reporte.getAspectoAmbiental(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 2));
+
         PdfPTable tabla2 = new PdfPTable(6);
-        tabla2.addCell("IMPACTO AMBIENTAL"); //Ocupa 2
-        tabla2.addCell("RECURSO AFECTADO"); // Ocupa 1
-        tabla2.addCell("OBSERVACIONES"); //Ocupa 3
+        tabla2.addCell(crearCeldaModificada("IMPACTO AMBIENTAL", colorAzulCeldas, fuenteCeldas, 2));
+        tabla2.addCell(crearCeldaModificada("RECURSO AFECTADO", colorAzulCeldas, fuenteCeldas, 1));
+        tabla2.addCell(crearCeldaModificada("OBSERVACIONES", colorAzulCeldas, fuenteCeldas, 3));
+        tabla2.addCell(crearCeldaModificada(reporte.getImpactoAmbiental(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 2));
+        tabla2.addCell(crearCeldaModificada(reporte.getRecursoAfectado(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla2.addCell(crearCeldaModificada(reporte.getObservaciones(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 3));
         
         PdfPTable tabla3 = new PdfPTable(11);
+        tabla3.addCell(crearCeldaModificada("VALORACIÓN DE IMPACTOS AMBIENTALES", colorAzulCeldas, fuenteCeldas, 11));
+        tabla3.addCell(crearCeldaModificada("TIPO DE IMPACTO", colorAzulCeldas, fuenteCeldas, 2));
+        tabla3.addCell(crearCeldaModificada("ALCANCE", colorAzulCeldas, fuenteCeldas, 1));
+        tabla3.addCell(crearCeldaModificada("PROBABILIDAD", colorAzulCeldas, fuenteCeldas, 1));
+        tabla3.addCell(crearCeldaModificada("DURACIÓN", colorAzulCeldas, fuenteCeldas, 1));
+        tabla3.addCell(crearCeldaModificada("RECUPERABILIDAD", colorAzulCeldas, fuenteCeldas, 1));
+        tabla3.addCell(crearCeldaModificada("MAGNITUD", colorAzulCeldas, fuenteCeldas, 1));
+        tabla3.addCell(crearCeldaModificada("NORMATIVIDAD", colorAzulCeldas, fuenteCeldas, 1));
+        tabla3.addCell(crearCeldaModificada("IMPORTANCIA DEL IMPACTO\nI = A*P*D*R*M*N", colorAzulCeldas, fuenteCeldas, 3));
+        tabla3.addCell(crearCeldaModificada(reporte.getTipoDelImpacto(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 2));
+        tabla3.addCell(crearCeldaModificada(reporte.getAlcance() + "", FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla3.addCell(crearCeldaModificada(reporte.getProbabilidad() + "", FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla3.addCell(crearCeldaModificada(reporte.getDuracion() + "", FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla3.addCell(crearCeldaModificada(reporte.getRecuperabilidad() + "", FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla3.addCell(crearCeldaModificada(reporte.getMagnitud() + "", FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla3.addCell(crearCeldaModificada(reporte.getNormatividad() + "", FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla3.addCell(crearCeldaModificada(reporte.getImportanciaDelImpacto() + "", FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 3));
         
         PdfPTable tabla4 = new PdfPTable(8);
-        tabla4.addCell("LEGISLACIÓN AMBIENTAL RELACIONADA"); //Ocupa 4
-        tabla4.addCell("CUMPLE LA NORMATIVIDAD"); //Ocupa 1
-        tabla4.addCell("SIGNIFICANCIA"); //Ocupa 3
+        tabla4.addCell(crearCeldaModificada("LEGISLACIÓN AMBIENTAL RELACIONADA", colorAzulCeldas, fuenteCeldas, 4));
+        tabla4.addCell(crearCeldaModificada("CUMPLE NORMATIVIDAD", colorAzulCeldas, fuenteCeldas, 1));
+        tabla4.addCell(crearCeldaModificada("SIGNIFICANCIA", colorAzulCeldas, fuenteCeldas, 3));
+        tabla4.addCell(crearCeldaModificada(reporte.getLegislacionAsociada(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 4));
+        tabla4.addCell(crearCeldaModificada(reporte.isCumpleNormatividad() ? "SI" : "NO", FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla4.addCell(crearCeldaModificada(" ", FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 3));
         
         PdfPTable tabla5 = new PdfPTable(2);
-        tabla5.addCell("CONTROL OPERACIONAL");
-        tabla5.addCell("ACCIONES DE MEJORA DEL CONTROL OPERACIONAL");
+        tabla5.addCell(crearCeldaModificada("CONTROL OPERACIONAL", colorAzulCeldas, fuenteCeldas, 1));
+        tabla5.addCell(crearCeldaModificada("ACCIONES DE MEJORA DEL CONTROL OPERACIONAL", colorAzulCeldas, fuenteCeldas, 1));
+        tabla5.addCell(crearCeldaModificada(reporte.getControlOperacional(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
+        tabla5.addCell(crearCeldaModificada(reporte.getAccionesDeMejora(), FontFactory.getFont(BaseFont.HELVETICA, 8.5f), 1));
         
         tabla1.setWidthPercentage(100);
         tabla2.setWidthPercentage(100);
