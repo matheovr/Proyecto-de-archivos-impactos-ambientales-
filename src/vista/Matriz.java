@@ -61,6 +61,29 @@ public class Matriz extends javax.swing.JFrame {
         
         return registro;
     }
+    
+    public void limpiarCampos() {
+        txtProceso.setText("");
+        txtSede.setText("");
+        txtActividadAsociada.setText("");
+        txtCicloVida.setText("");
+        txtObservaciones.setText("");
+        txtLegislacion.setText("");
+        txtControlOperacional.setText("");
+        txtAccionMejora.setText("");
+        boxSituacion.setSelectedIndex(0);
+        boxAspectoAmbiental.setSelectedIndex(0);
+        boxImpactoAmbiental.setSelectedIndex(0);
+        boxRecursoAfectado.setSelectedIndex(0);
+        boxTipoImpacto.setSelectedIndex(0);
+        boxAlcance.setSelectedIndex(0);
+        boxProbabilidad.setSelectedIndex(0);
+        boxDuracion.setSelectedIndex(0);
+        boxRecuperabilidad.setSelectedIndex(0);
+        boxMagnitud.setSelectedIndex(0);
+        boxNormatividad.setSelectedIndex(0);
+        boxCumpleNormatividad.setSelectedIndex(0);
+    }
 
     /**
      * This method is called from within the constructor to initialize the Matriz.
@@ -73,60 +96,62 @@ public class Matriz extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        lblTitulo = new javax.swing.JLabel();
-        lblProceso = new javax.swing.JLabel();
-        lblSede = new javax.swing.JLabel();
-        lblActividadAsociada = new javax.swing.JLabel();
-        lblCicloVida = new javax.swing.JLabel();
-        lblSituacion = new javax.swing.JLabel();
-        lblAspectoAmbiental = new javax.swing.JLabel();
-        lblImpactoAmbiental = new javax.swing.JLabel();
-        lblRecursoAfectado = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        btnAgregarRegistro = new javax.swing.JButton();
+        btnGenerarInforme = new javax.swing.JButton();
+        boxAlcance = new javax.swing.JComboBox();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtProceso = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtActividadAsociada = new javax.swing.JTextArea();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        txtCicloVida = new javax.swing.JTextArea();
+        lblCicloVida = new javax.swing.JLabel();
+        lblSituacion = new javax.swing.JLabel();
+        boxImpactoAmbiental = new javax.swing.JComboBox();
+        lblCumpleNormatividad = new javax.swing.JLabel();
+        lblAlcance = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         txtSede = new javax.swing.JTextArea();
+        lblAspectoAmbiental = new javax.swing.JLabel();
+        boxDuracion = new javax.swing.JComboBox();
+        lblDuracion = new javax.swing.JLabel();
+        btnCargarExcel = new javax.swing.JButton();
         boxSituacion = new javax.swing.JComboBox();
-        boxAspectoAmbiental = new javax.swing.JComboBox();
-        boxImpactoAmbiental = new javax.swing.JComboBox();
-        boxRecursoAfectado = new javax.swing.JComboBox();
-        lblLogo = new javax.swing.JLabel();
-        lblObservacion = new javax.swing.JLabel();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        txtObservaciones = new javax.swing.JTextArea();
-        lblLegislacion = new javax.swing.JLabel();
         lblControl = new javax.swing.JLabel();
-        lblAccionesMejora = new javax.swing.JLabel();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        txtControlOperacional = new javax.swing.JTextArea();
-        jScrollPane12 = new javax.swing.JScrollPane();
-        txtAccionMejora = new javax.swing.JTextArea();
         jScrollPane13 = new javax.swing.JScrollPane();
         txtLegislacion = new javax.swing.JTextArea();
-        lblValoracionImpactos = new javax.swing.JLabel();
+        lblAccionesMejora = new javax.swing.JLabel();
         lblTipoImpacto = new javax.swing.JLabel();
-        lblAlcance = new javax.swing.JLabel();
-        lblProbabilidad = new javax.swing.JLabel();
-        lblDuracion = new javax.swing.JLabel();
-        lblRecuperabilidad = new javax.swing.JLabel();
+        lblRecursoAfectado = new javax.swing.JLabel();
         lblMagnitud = new javax.swing.JLabel();
-        lblNormatividad = new javax.swing.JLabel();
-        lblCumpleNormatividad = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtActividadAsociada = new javax.swing.JTextArea();
+        lblTitulo = new javax.swing.JLabel();
         boxTipoImpacto = new javax.swing.JComboBox();
-        boxAlcance = new javax.swing.JComboBox();
-        boxDuracion = new javax.swing.JComboBox();
-        boxRecuperabilidad = new javax.swing.JComboBox();
-        boxProbabilidad = new javax.swing.JComboBox();
+        lblLegislacion = new javax.swing.JLabel();
+        lblProbabilidad = new javax.swing.JLabel();
+        lblRecuperabilidad = new javax.swing.JLabel();
+        boxRecursoAfectado = new javax.swing.JComboBox();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        txtObservaciones = new javax.swing.JTextArea();
+        lblNormatividad = new javax.swing.JLabel();
         boxMagnitud = new javax.swing.JComboBox();
+        lblActividadAsociada = new javax.swing.JLabel();
+        lblProceso = new javax.swing.JLabel();
+        boxProbabilidad = new javax.swing.JComboBox();
+        lblValoracionImpactos = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
         boxNormatividad = new javax.swing.JComboBox();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        txtAccionMejora = new javax.swing.JTextArea();
+        lblImpactoAmbiental = new javax.swing.JLabel();
+        boxRecuperabilidad = new javax.swing.JComboBox();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        txtControlOperacional = new javax.swing.JTextArea();
+        boxAspectoAmbiental = new javax.swing.JComboBox();
+        lblSede = new javax.swing.JLabel();
+        lblObservacion = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtCicloVida = new javax.swing.JTextArea();
         boxCumpleNormatividad = new javax.swing.JComboBox();
-        btnAgregarRegistro = new javax.swing.JButton();
-        btnCargarExcel = new javax.swing.JButton();
-        btnGenerarInforme = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -144,227 +169,13 @@ public class Matriz extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("IDEAM");
         setBackground(new java.awt.Color(255, 255, 255));
-        setResizable(false);
+        setPreferredSize(new java.awt.Dimension(1172, 920));
         setSize(new java.awt.Dimension(1180, 920));
 
-        lblTitulo.setFont(new java.awt.Font("sansserif", 1, 20)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(153, 153, 153));
-        lblTitulo.setText("MATRIZ DE IDENTIFICACIÓN DE ASPECTOS Y VALORACIÓN DE IMPACTOS AMBIENTALES");
+        jScrollPane6.setPreferredSize(new java.awt.Dimension(981, 720));
 
-        lblProceso.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblProceso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblProceso.setText("PROCESO");
-        lblProceso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblProceso.setIconTextGap(2);
-        lblProceso.setOpaque(true);
-
-        lblSede.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblSede.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblSede.setText("SEDE");
-        lblSede.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblSede.setOpaque(true);
-
-        lblActividadAsociada.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblActividadAsociada.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblActividadAsociada.setText("ACTIVIDAD ASOCIADA AL ASPECTO");
-        lblActividadAsociada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblActividadAsociada.setOpaque(true);
-
-        lblCicloVida.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblCicloVida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCicloVida.setText("CICLO DE VIDA DEL SERVICIO");
-        lblCicloVida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblCicloVida.setOpaque(true);
-
-        lblSituacion.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblSituacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblSituacion.setText("SITUACIÓN");
-        lblSituacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblSituacion.setIconTextGap(2);
-        lblSituacion.setOpaque(true);
-
-        lblAspectoAmbiental.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblAspectoAmbiental.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAspectoAmbiental.setText("ASPECTO AMBIENTAL ASOCIADO");
-        lblAspectoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblAspectoAmbiental.setOpaque(true);
-
-        lblImpactoAmbiental.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblImpactoAmbiental.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblImpactoAmbiental.setText("IMPACTO AMBIENTAL");
-        lblImpactoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblImpactoAmbiental.setOpaque(true);
-
-        lblRecursoAfectado.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblRecursoAfectado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblRecursoAfectado.setText("RECURSO AFECTADO");
-        lblRecursoAfectado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblRecursoAfectado.setOpaque(true);
-
-        txtProceso.setColumns(20);
-        txtProceso.setLineWrap(true);
-        txtProceso.setRows(5);
-        txtProceso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane2.setViewportView(txtProceso);
-
-        txtActividadAsociada.setColumns(20);
-        txtActividadAsociada.setLineWrap(true);
-        txtActividadAsociada.setRows(5);
-        txtActividadAsociada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane3.setViewportView(txtActividadAsociada);
-
-        txtCicloVida.setColumns(20);
-        txtCicloVida.setLineWrap(true);
-        txtCicloVida.setRows(5);
-        txtCicloVida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane4.setViewportView(txtCicloVida);
-
-        txtSede.setColumns(20);
-        txtSede.setLineWrap(true);
-        txtSede.setRows(5);
-        txtSede.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane5.setViewportView(txtSede);
-
-        boxSituacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "NORMAL", "ANORMAL", "EMERGENCIA" }));
-        boxSituacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        boxAspectoAmbiental.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesAspectoAmbiental()));
-        boxAspectoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        boxImpactoAmbiental.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesImpactoAmbiental()));
-        boxImpactoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        boxRecursoAfectado.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesRecursoAfectado()));
-        boxRecursoAfectado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono_IDEAM 1.png"))); // NOI18N
-
-        lblObservacion.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblObservacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblObservacion.setText("OBSERVACIONES");
-        lblObservacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblObservacion.setIconTextGap(2);
-        lblObservacion.setOpaque(true);
-
-        txtObservaciones.setColumns(20);
-        txtObservaciones.setLineWrap(true);
-        txtObservaciones.setRows(5);
-        txtObservaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane10.setViewportView(txtObservaciones);
-
-        lblLegislacion.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblLegislacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLegislacion.setText("LEGISLACIÓN AMB. RELACIONADA");
-        lblLegislacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblLegislacion.setOpaque(true);
-
-        lblControl.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblControl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblControl.setText("CONTROL OPERACIONAL");
-        lblControl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblControl.setOpaque(true);
-
-        lblAccionesMejora.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblAccionesMejora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAccionesMejora.setText("ACCIONES DE MEJORA CTRL. OPER.");
-        lblAccionesMejora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblAccionesMejora.setOpaque(true);
-
-        txtControlOperacional.setColumns(20);
-        txtControlOperacional.setLineWrap(true);
-        txtControlOperacional.setRows(5);
-        txtControlOperacional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane11.setViewportView(txtControlOperacional);
-
-        txtAccionMejora.setColumns(20);
-        txtAccionMejora.setLineWrap(true);
-        txtAccionMejora.setRows(5);
-        txtAccionMejora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane12.setViewportView(txtAccionMejora);
-
-        txtLegislacion.setColumns(20);
-        txtLegislacion.setLineWrap(true);
-        txtLegislacion.setRows(5);
-        txtLegislacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane13.setViewportView(txtLegislacion);
-
-        lblValoracionImpactos.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblValoracionImpactos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblValoracionImpactos.setText("VALORACIÓN DE IMPACTOS AMBIENTALES");
-        lblValoracionImpactos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblValoracionImpactos.setOpaque(true);
-
-        lblTipoImpacto.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblTipoImpacto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTipoImpacto.setText("TIPO IMPACTO");
-        lblTipoImpacto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblTipoImpacto.setOpaque(true);
-
-        lblAlcance.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblAlcance.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAlcance.setText("ALCANCE");
-        lblAlcance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblAlcance.setOpaque(true);
-
-        lblProbabilidad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblProbabilidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblProbabilidad.setText("PROBABILIDAD");
-        lblProbabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblProbabilidad.setOpaque(true);
-
-        lblDuracion.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblDuracion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblDuracion.setText("DURACIÓN");
-        lblDuracion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblDuracion.setOpaque(true);
-
-        lblRecuperabilidad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblRecuperabilidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblRecuperabilidad.setText("RECUPERABILIDAD");
-        lblRecuperabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblRecuperabilidad.setOpaque(true);
-
-        lblMagnitud.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblMagnitud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMagnitud.setText("MAGNITUD");
-        lblMagnitud.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblMagnitud.setOpaque(true);
-
-        lblNormatividad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblNormatividad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblNormatividad.setText("NORMATIVIDAD");
-        lblNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblNormatividad.setOpaque(true);
-
-        lblCumpleNormatividad.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblCumpleNormatividad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCumpleNormatividad.setText("<html><body><center>CUMPLE <br>NORMATIVIDAD</center></body></html>");
-        lblCumpleNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblCumpleNormatividad.setOpaque(true);
-
-        boxTipoImpacto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "POSITIVO (+)", "NEGATIVO (-)" }));
-        boxTipoImpacto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        boxAlcance.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
-        boxAlcance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        boxDuracion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
-        boxDuracion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        boxRecuperabilidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
-        boxRecuperabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        boxProbabilidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
-        boxProbabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        boxMagnitud.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
-        boxMagnitud.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        boxNormatividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "10" }));
-        boxNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        boxCumpleNormatividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SI", "NO" }));
-        boxCumpleNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1130, 920));
 
         btnAgregarRegistro.setBackground(new java.awt.Color(204, 204, 204));
         btnAgregarRegistro.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
@@ -374,17 +185,6 @@ public class Matriz extends javax.swing.JFrame {
         btnAgregarRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarRegistroActionPerformed(evt);
-            }
-        });
-
-        btnCargarExcel.setBackground(new java.awt.Color(204, 204, 204));
-        btnCargarExcel.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
-        btnCargarExcel.setText("CARGAR ARCHIVO DE EXCEL");
-        btnCargarExcel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        btnCargarExcel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnCargarExcel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCargarExcelActionPerformed(evt);
             }
         });
 
@@ -399,188 +199,431 @@ public class Matriz extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(428, 428, 428)
-                .addComponent(lblLogo)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(lblSede, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(lblActividadAsociada, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(lblCicloVida, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jScrollPane4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(lblAspectoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(lblImpactoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(lblRecursoAfectado, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(boxSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(boxAspectoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(boxImpactoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(boxRecursoAfectado, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblObservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(lblLegislacion, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(lblControl, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(lblAccionesMejora, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(boxTipoImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxProbabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxRecuperabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxCumpleNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(lblValoracionImpactos, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(lblTipoImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lblAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lblProbabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lblDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lblRecuperabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lblMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lblNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        boxAlcance.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
+        boxAlcance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txtProceso.setColumns(20);
+        txtProceso.setLineWrap(true);
+        txtProceso.setRows(5);
+        txtProceso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane2.setViewportView(txtProceso);
+
+        lblCicloVida.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblCicloVida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCicloVida.setText("CICLO DE VIDA DEL SERVICIO");
+        lblCicloVida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCicloVida.setOpaque(true);
+
+        lblSituacion.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblSituacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSituacion.setText("SITUACIÓN");
+        lblSituacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblSituacion.setIconTextGap(2);
+        lblSituacion.setOpaque(true);
+
+        boxImpactoAmbiental.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesImpactoAmbiental()));
+        boxImpactoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblCumpleNormatividad.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblCumpleNormatividad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCumpleNormatividad.setText("<html><body><center>CUMPLE <br>NORMATIVIDAD</center></body></html>");
+        lblCumpleNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCumpleNormatividad.setOpaque(true);
+
+        lblAlcance.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblAlcance.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAlcance.setText("ALCANCE");
+        lblAlcance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAlcance.setOpaque(true);
+
+        txtSede.setColumns(20);
+        txtSede.setLineWrap(true);
+        txtSede.setRows(5);
+        txtSede.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane5.setViewportView(txtSede);
+
+        lblAspectoAmbiental.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblAspectoAmbiental.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAspectoAmbiental.setText("ASPECTO AMBIENTAL ASOCIADO");
+        lblAspectoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAspectoAmbiental.setOpaque(true);
+
+        boxDuracion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
+        boxDuracion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblDuracion.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblDuracion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDuracion.setText("DURACIÓN");
+        lblDuracion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblDuracion.setOpaque(true);
+
+        btnCargarExcel.setBackground(new java.awt.Color(204, 204, 204));
+        btnCargarExcel.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
+        btnCargarExcel.setText("CARGAR ARCHIVO DE EXCEL");
+        btnCargarExcel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        btnCargarExcel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCargarExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarExcelActionPerformed(evt);
+            }
+        });
+
+        boxSituacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "NORMAL", "ANORMAL", "EMERGENCIA" }));
+        boxSituacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblControl.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblControl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblControl.setText("CONTROL OPERACIONAL");
+        lblControl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblControl.setOpaque(true);
+
+        txtLegislacion.setColumns(20);
+        txtLegislacion.setLineWrap(true);
+        txtLegislacion.setRows(5);
+        txtLegislacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane13.setViewportView(txtLegislacion);
+
+        lblAccionesMejora.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblAccionesMejora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAccionesMejora.setText("ACCIONES DE MEJORA CTRL. OPER.");
+        lblAccionesMejora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAccionesMejora.setOpaque(true);
+
+        lblTipoImpacto.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblTipoImpacto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTipoImpacto.setText("TIPO IMPACTO");
+        lblTipoImpacto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblTipoImpacto.setOpaque(true);
+
+        lblRecursoAfectado.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblRecursoAfectado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRecursoAfectado.setText("RECURSO AFECTADO");
+        lblRecursoAfectado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblRecursoAfectado.setOpaque(true);
+
+        lblMagnitud.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblMagnitud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMagnitud.setText("MAGNITUD");
+        lblMagnitud.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblMagnitud.setOpaque(true);
+
+        txtActividadAsociada.setColumns(20);
+        txtActividadAsociada.setLineWrap(true);
+        txtActividadAsociada.setRows(5);
+        txtActividadAsociada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane3.setViewportView(txtActividadAsociada);
+
+        lblTitulo.setFont(new java.awt.Font("sansserif", 1, 20)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(153, 153, 153));
+        lblTitulo.setText("MATRIZ DE IDENTIFICACIÓN DE ASPECTOS Y VALORACIÓN DE IMPACTOS AMBIENTALES");
+
+        boxTipoImpacto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "POSITIVO (+)", "NEGATIVO (-)" }));
+        boxTipoImpacto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblLegislacion.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblLegislacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLegislacion.setText("LEGISLACIÓN AMB. RELACIONADA");
+        lblLegislacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblLegislacion.setOpaque(true);
+
+        lblProbabilidad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblProbabilidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProbabilidad.setText("PROBABILIDAD");
+        lblProbabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblProbabilidad.setOpaque(true);
+
+        lblRecuperabilidad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblRecuperabilidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRecuperabilidad.setText("RECUPERABILIDAD");
+        lblRecuperabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblRecuperabilidad.setOpaque(true);
+
+        boxRecursoAfectado.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesRecursoAfectado()));
+        boxRecursoAfectado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txtObservaciones.setColumns(20);
+        txtObservaciones.setLineWrap(true);
+        txtObservaciones.setRows(5);
+        txtObservaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane10.setViewportView(txtObservaciones);
+
+        lblNormatividad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblNormatividad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNormatividad.setText("NORMATIVIDAD");
+        lblNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblNormatividad.setOpaque(true);
+
+        boxMagnitud.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
+        boxMagnitud.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblActividadAsociada.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblActividadAsociada.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblActividadAsociada.setText("ACTIVIDAD ASOCIADA AL ASPECTO");
+        lblActividadAsociada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblActividadAsociada.setOpaque(true);
+
+        lblProceso.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblProceso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProceso.setText("PROCESO");
+        lblProceso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblProceso.setIconTextGap(2);
+        lblProceso.setOpaque(true);
+
+        boxProbabilidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
+        boxProbabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblValoracionImpactos.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblValoracionImpactos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblValoracionImpactos.setText("VALORACIÓN DE IMPACTOS AMBIENTALES");
+        lblValoracionImpactos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblValoracionImpactos.setOpaque(true);
+
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono_IDEAM 1.png"))); // NOI18N
+
+        boxNormatividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "10" }));
+        boxNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txtAccionMejora.setColumns(20);
+        txtAccionMejora.setLineWrap(true);
+        txtAccionMejora.setRows(5);
+        txtAccionMejora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane12.setViewportView(txtAccionMejora);
+
+        lblImpactoAmbiental.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblImpactoAmbiental.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblImpactoAmbiental.setText("IMPACTO AMBIENTAL");
+        lblImpactoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblImpactoAmbiental.setOpaque(true);
+
+        boxRecuperabilidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "5", "10" }));
+        boxRecuperabilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txtControlOperacional.setColumns(20);
+        txtControlOperacional.setLineWrap(true);
+        txtControlOperacional.setRows(5);
+        txtControlOperacional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane11.setViewportView(txtControlOperacional);
+
+        boxAspectoAmbiental.setModel(new javax.swing.DefaultComboBoxModel(archivoCsv.getOpcionesAspectoAmbiental()));
+        boxAspectoAmbiental.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lblSede.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblSede.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSede.setText("SEDE");
+        lblSede.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblSede.setOpaque(true);
+
+        lblObservacion.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblObservacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblObservacion.setText("OBSERVACIONES");
+        lblObservacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblObservacion.setIconTextGap(2);
+        lblObservacion.setOpaque(true);
+
+        txtCicloVida.setColumns(20);
+        txtCicloVida.setLineWrap(true);
+        txtCicloVida.setRows(5);
+        txtCicloVida.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane4.setViewportView(txtCicloVida);
+
+        boxCumpleNormatividad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SI", "NO" }));
+        boxCumpleNormatividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(lblProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(lblSede, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(lblActividadAsociada, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(lblCicloVida, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(jScrollPane4))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(lblSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(lblAspectoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(lblImpactoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(lblRecursoAfectado, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(boxSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(boxAspectoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(boxImpactoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(boxRecursoAfectado, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(lblObservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(lblLegislacion, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(lblControl, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(lblAccionesMejora, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(boxTipoImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblCumpleNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, 0)
-                                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, 0)
-                                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, 0)
-                                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(91, 91, 91)
-                                .addComponent(btnCargarExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(65, 65, 65)
-                                .addComponent(btnAgregarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(98, 98, 98))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblTitulo)
-                        .addGap(154, 154, 154))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnGenerarInforme, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(408, 408, 408))))
+                                    .addComponent(boxAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(boxProbabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(boxDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(boxRecuperabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(boxMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(boxNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(boxCumpleNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(lblValoracionImpactos, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(lblTipoImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblProbabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblRecuperabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblCumpleNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, 0)
+                                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, 0)
+                                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, 0)
+                                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(91, 91, 91)
+                                    .addComponent(btnCargarExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(65, 65, 65)
+                                    .addComponent(btnAgregarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnGenerarInforme, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(301, 301, 301))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblTitulo)
+                                .addGap(47, 47, 47))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(423, 423, 423)
+                        .addComponent(lblLogo)))
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addComponent(lblLogo)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTitulo)
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSede, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblActividadAsociada, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCicloVida, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAspectoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblImpactoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblRecursoAfectado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(boxSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(boxAspectoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(boxImpactoAmbiental, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(boxRecursoAfectado, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblObservacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLegislacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblControl, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAccionesMejora, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblValoracionImpactos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblTipoImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblProbabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(lblDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblRecuperabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(lblCumpleNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(boxTipoImpacto, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(boxAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(boxProbabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(boxDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(boxMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(boxRecuperabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(boxNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(boxCumpleNormatividad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCargarExcel)
                     .addComponent(btnAgregarRegistro))
                 .addGap(22, 22, 22)
                 .addComponent(btnGenerarInforme)
-                .addGap(46, 46, 46))
+                .addContainerGap())
+        );
+
+        jScrollPane6.setViewportView(jPanel1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 1180, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -597,6 +640,7 @@ public class Matriz extends javax.swing.JFrame {
     private void btnGenerarInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarInformeActionPerformed
         ImpactoAmbiental registroAmbiental = crearImpactoAmbiental();
         pdf.crearReporte(registroAmbiental);
+        limpiarCampos();
         //archivoCsv.ExportarCSV(new List<>);
     }//GEN-LAST:event_btnGenerarInformeActionPerformed
 
@@ -655,6 +699,7 @@ public class Matriz extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarRegistro;
     private javax.swing.JButton btnCargarExcel;
     private javax.swing.JButton btnGenerarInforme;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -664,6 +709,7 @@ public class Matriz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblAccionesMejora;
     private javax.swing.JLabel lblActividadAsociada;

@@ -113,19 +113,16 @@ public class Pdf {
     public void agregarInformacionControlCambios(Document documento) {
         try {
 
-            PdfPTable tablaInternaControl = new PdfPTable(3);
-
-            PdfPCell celdaControlDeCambios = crearCeldaModificada("CONTROL DE CAMBIOS", fuenteCeldasTitulo, 1);
-            celdaControlDeCambios.setColspan(3);
-            PdfPCell celdaInternaVersion = crearCeldaModificada("VERSION", fuenteCeldasTitulo, 1);
-            PdfPCell celdaInternaFecha = crearCeldaModificada("FECHA", fuenteCeldasTitulo, 1);
-            PdfPCell celdaInternaDescripcion = crearCeldaModificada("DESCRIPCIÓN", fuenteCeldasTitulo, 1);
-
+            PdfPTable tablaInternaControl = new PdfPTable(12);
             tablaInternaControl.setWidthPercentage(100);
+            PdfPCell celdaControlDeCambios = crearCeldaModificada("CONTROL DE CAMBIOS", fuenteCeldasTitulo, 12);
+            PdfPCell celdaInternaVersion = crearCeldaModificada("VERSION", fuenteCeldasTitulo, 3);
+            PdfPCell celdaInternaFecha = crearCeldaModificada("FECHA", fuenteCeldasTitulo, 2);
+            PdfPCell celdaInternaDescripcion = crearCeldaModificada("DESCRIPCIÓN", fuenteCeldasTitulo, 7);
 
-            PdfPCell celdaIngresoVersion = crearCeldaModificada(VERSION, fuenteCeldas, 1);
-            PdfPCell celdaIngresoFecha = crearCeldaModificada(FECHAAACTUALIZACION, fuenteCeldas, 1);
-            PdfPCell celdaIngresoDescripcion = crearCeldaModificada(DESCRIPCION, fuenteCeldas, 1);
+            PdfPCell celdaIngresoVersion = crearCeldaModificada(VERSION, fuenteCeldas, 3);
+            PdfPCell celdaIngresoFecha = crearCeldaModificada(FECHAAACTUALIZACION, fuenteCeldas, 2);
+            PdfPCell celdaIngresoDescripcion = crearCeldaModificada(DESCRIPCION, fuenteCeldas, 7);
 
             tablaInternaControl.addCell(celdaControlDeCambios);
             tablaInternaControl.addCell(celdaInternaVersion);
@@ -145,16 +142,14 @@ public class Pdf {
     public void agregarInformacionFinal(Document documento) {
         try {
 
-            PdfPTable tablaFinal = new PdfPTable(3);
-            PdfPCell celdaElaboro = crearCeldaModificada("ELABORÓ:", fuenteCeldasTitulo, 1);
-            PdfPCell celdaReviso = crearCeldaModificada("REVISÓ:", fuenteCeldasTitulo, 1);
-            PdfPCell celdaAprobo = crearCeldaModificada("APROBÓ:", fuenteCeldasTitulo, 1);
-
+            PdfPTable tablaFinal = new PdfPTable(12);
             tablaFinal.setWidthPercentage(100);
-
-            PdfPCell celdaIngresoElaboro = crearCeldaModificada(RESPONSABLE + "\n" + "Contratista" + "\n" + "Oficina Asesora de Planeación", fuenteCeldas, 1);
-            PdfPCell celdaIngresoReviso = crearCeldaModificada(REVISOR + "\n" + CARGOREVISOR, fuenteCeldas, 1);
-            PdfPCell celdaIngresoAprobo = crearCeldaModificada(REVISOR + "\n" + CARGOREVISOR, fuenteCeldas, 1);
+            PdfPCell celdaElaboro = crearCeldaModificada("ELABORÓ:", fuenteCeldasTitulo, 3);
+            PdfPCell celdaReviso = crearCeldaModificada("REVISÓ:", fuenteCeldasTitulo, 2);
+            PdfPCell celdaAprobo = crearCeldaModificada("APROBÓ:", fuenteCeldasTitulo, 7);
+            PdfPCell celdaIngresoElaboro = crearCeldaModificada(RESPONSABLE + "\n" + "Contratista" + "\n" + "Oficina Asesora de Planeación", fuenteCeldas, 3);
+            PdfPCell celdaIngresoReviso = crearCeldaModificada(REVISOR + "\n" + CARGOREVISOR, fuenteCeldas, 2);
+            PdfPCell celdaIngresoAprobo = crearCeldaModificada(REVISOR + "\n" + CARGOREVISOR, fuenteCeldas, 7);
 
             tablaFinal.addCell(celdaElaboro);
             tablaFinal.addCell(celdaReviso);
@@ -230,8 +225,8 @@ public class Pdf {
         tablaInfoCuerpo3.addCell(crearCeldaModificada(reporte.getCalificacion(), fuenteCeldas, 2));
 
         PdfPTable tablaInfoCuerpoCtrlOperacional = new PdfPTable(2);
-        tablaInfoCuerpoCtrlOperacional.addCell(crearCeldaModificada("CONTROL OPERACIONAL", colorAzulCeldas, fuenteCeldas, 1));
-        tablaInfoCuerpoCtrlOperacional.addCell(crearCeldaModificada("ACCIONES DE MEJORA DEL CONTROL OPERACIONAL", colorAzulCeldas, fuenteCeldas, 1));
+        tablaInfoCuerpoCtrlOperacional.addCell(crearCeldaModificada("CONTROL OPERACIONAL", colorAzulCeldas, fuenteCeldasTitulo, 1));
+        tablaInfoCuerpoCtrlOperacional.addCell(crearCeldaModificada("ACCIONES DE MEJORA DEL CONTROL OPERACIONAL", colorAzulCeldas, fuenteCeldasTitulo, 1));
         tablaInfoCuerpoCtrlOperacional.addCell(crearCeldaModificada(reporte.getControlOperacional(), fuenteCeldas, 1));
         tablaInfoCuerpoCtrlOperacional.addCell(crearCeldaModificada(reporte.getAccionesDeMejora(), fuenteCeldas, 1));
 
