@@ -20,7 +20,6 @@ import javax.swing.JOptionPane;
  * @author jpag0
  */
 public class RegistroFotografico {
-   // public ArrayList<File> imagenes = new ArrayList();
     JFileChooser seleccionar = new JFileChooser();
     File archivo;
     byte[] imagen;
@@ -66,10 +65,12 @@ public class RegistroFotografico {
               }else{
                   JOptionPane.showMessageDialog(null, "Archivo no compatible");
               }
-              if(seleccionar.showDialog(null, "Guardar")==JFileChooser.APPROVE_OPTION){
+              if(seleccionar.showDialog(null, "Agregar Registro Fotográfico")==JFileChooser.APPROVE_OPTION){
+                  ArrayList<File> imagenes = new ArrayList();
                   archivo=seleccionar.getSelectedFile();
                   if(archivo.getName().endsWith("jpg")||archivo.getName().endsWith("png")||archivo.getName().endsWith("gif"));
                   String respuesta=GuardarImagen(archivo, imagen);
+                  imagenes.add(archivo);
                   if(respuesta!=null){
                       JOptionPane.showMessageDialog(null, respuesta);
                       
@@ -79,6 +80,7 @@ public class RegistroFotografico {
               }else{
                   JOptionPane.showMessageDialog(null, "Archivo guardado");
               }
+   
           }
           
       }      
