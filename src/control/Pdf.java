@@ -68,7 +68,7 @@ public class Pdf {
             agregarInformacionInicial(documento);
             documento.add(new Paragraph(" "));
             agregarCuerpoPdf(documento, reporte);
-            documento.newPage();
+            documento.add(new Paragraph(" "));
             agregarInformacionControlCambios(documento);
             documento.add(new Paragraph(" "));
             agregarInformacionFinal(documento);
