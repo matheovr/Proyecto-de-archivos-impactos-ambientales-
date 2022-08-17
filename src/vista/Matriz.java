@@ -60,6 +60,11 @@ public class Matriz extends javax.swing.JFrame {
         registro.calcImportancia();
         registro.calcCalificacion();
         registro.calcValor();
+        try{
+            archivoCsv.exportarCsv(registro);
+        } catch (IOException e){
+            
+        }
         
         System.out.println(registro.toString());
         

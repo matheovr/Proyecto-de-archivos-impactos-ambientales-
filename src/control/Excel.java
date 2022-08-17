@@ -121,13 +121,8 @@ public class Excel {
         }
     }
     
-    public void llamarExportacionCsv() throws IOException{
-        List<ImpactoAmbiental> infoImpacto = new ArrayList<ImpactoAmbiental>();
-        infoImpacto.add(new ImpactoAmbiental());
-        exportarCsv(infoImpacto);
-    }
     
-    public void exportarCsv(List<ImpactoAmbiental> infoImpacto) throws IOException{
+    public void exportarCsv(ImpactoAmbiental infoImpacto) throws IOException{
         String salidaArchivo = "InformacionDeImpactoAmbiental.csv";
         boolean existe = new File(salidaArchivo).exists();
         if(existe){
@@ -136,26 +131,31 @@ public class Excel {
         }
         try {
             CsvWriter salidaCSV = new CsvWriter(new FileWriter(salidaArchivo, true),';');
-            salidaCSV.write("Proceso;"+Matriz.txtProceso.getText());
-            salidaCSV.write("Sede;"+Matriz.txtSede.getText());
-            salidaCSV.write("Actividad asociada al aspecto;"+Matriz.txtActividadAsociada.getText());
-            salidaCSV.write("Ciclo de vida del servicio;"+Matriz.txtCicloVida.getText());
-            salidaCSV.write("Observaciones;"+Matriz.txtObservaciones.getText());
-            salidaCSV.write("Legislacion ambiental relacionada;"+Matriz.txtLegislacion.getText());
-            salidaCSV.write("Control operacional;"+Matriz.txtControlOperacional.getText());
-            salidaCSV.write("Acciones de mejora del control operacional;"+Matriz.txtAccionMejora.getText());
+            salidaCSV.write("PROCESO");
+            salidaCSV.write(infoImpacto.getProceso());
             salidaCSV.endRecord();
-            for(ImpactoAmbiental impacto : infoImpacto){
-                salidaCSV.write(impacto.getProceso());
-                salidaCSV.write(impacto.getSede());
-                salidaCSV.write(impacto.getActividadAsociada());
-                salidaCSV.write(impacto.getCicloDeVida());
-                salidaCSV.write(impacto.getObservaciones());
-                salidaCSV.write(impacto.getLegislacionAsociada());
-                salidaCSV.write(impacto.getControlOperacional());
-                salidaCSV.write(impacto.getAccionesDeMejora());
-                salidaCSV.endRecord();
-            }
+            salidaCSV.write("SEDE");
+            salidaCSV.write(infoImpacto.getSede());
+            salidaCSV.endRecord();
+            salidaCSV.write("ACTIVIDAD ASOCIADA AL APECTO");
+            salidaCSV.write(infoImpacto.getActividadAsociada());
+            salidaCSV.endRecord();
+            salidaCSV.write("CICLO DE VIDA DEL SERVICIO");
+            salidaCSV.write(infoImpacto.getCicloDeVida());
+            salidaCSV.endRecord();
+            salidaCSV.write("OBSERVACIONES");
+            salidaCSV.write(infoImpacto.getObservaciones());
+            salidaCSV.endRecord();
+            salidaCSV.write("LEGISLACION AMBIENTAL RELACIONADA");
+            salidaCSV.write(infoImpacto.getLegislacionAsociada());
+            salidaCSV.endRecord();
+            salidaCSV.write("CONTROL OPERACIONAL");
+            salidaCSV.write(infoImpacto.getControlOperacional());
+            salidaCSV.endRecord();
+            salidaCSV.write("ACCIONES DE MEJORA DEL CONTROL OPERACIONAL");
+            salidaCSV.write(infoImpacto.getAccionesDeMejora());
+            salidaCSV.endRecord();
+            
             salidaCSV.close();
         } catch(IOException e) {
             e.printStackTrace();
