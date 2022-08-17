@@ -261,6 +261,7 @@ public class Pdf implements PdfIF{
 
     }
     
+    @Override
     public void agregarRegistrosFotograficos(Document documento, ArrayList<Image> registrosFotograficos){
         PdfPTable tablaImagenes = new PdfPTable(1);
         tablaImagenes.setWidthPercentage(100);
