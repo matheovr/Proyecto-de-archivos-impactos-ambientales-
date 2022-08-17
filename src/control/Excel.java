@@ -3,7 +3,6 @@
  */
 package control;
 
-//import com.csvreader.CsvWriter;
 import com.csvreader.CsvWriter;
 import java.io.BufferedReader;
 import java.io.File;
@@ -32,9 +31,6 @@ public class Excel {
     private ImpactoAmbiental ImpactoAmbiental;
     private Matriz Matriz;
 
-    /**
-     * Constructor vacio
-     */
     public Excel() {
     }
     

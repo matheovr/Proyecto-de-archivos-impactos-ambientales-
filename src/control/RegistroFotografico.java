@@ -18,8 +18,12 @@ import javax.swing.JOptionPane;
 
 
 /**
- *
- * @author jpag0
+ * @author Ana Vega
+ * @author Nicolás Carmona Cardona
+ * @author Mateo Velasquez 
+ * @author Jose D. Gómez
+ * @author Daniel Cano
+ * @author Juan P. Arango
  */
 public class RegistroFotografico {
     private JFileChooser seleccionar;
@@ -78,7 +82,7 @@ public class RegistroFotografico {
     }
     
     /**
-     * Se agraga la imagen previamente seleccionada y guardada para esta agregarla al pdf
+     * Se agrega la imagen previamente seleccionada y guardada al informe final
      * 
      */
       public void agregarRegistroFotografico(){

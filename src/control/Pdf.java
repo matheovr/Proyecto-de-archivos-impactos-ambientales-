@@ -265,7 +265,7 @@ public class Pdf implements PdfIF{
         PdfPTable tablaImagenes = new PdfPTable(1);
         tablaImagenes.setWidthPercentage(100);
         if(!registrosFotograficos.isEmpty()){
-            tablaImagenes.addCell(crearCeldaModificada("REGITROS FOTOGRÁFICOS", colorAzulCeldas, fuenteCeldasTitulo, 1));
+            tablaImagenes.addCell(crearCeldaModificada("REGISTROS FOTOGRÁFICOS", colorAzulCeldas, fuenteCeldasTitulo, 1));
         }
         for (Image registroFotografico : registrosFotograficos) {
             registroFotografico.scaleAbsolute(50, 50);
