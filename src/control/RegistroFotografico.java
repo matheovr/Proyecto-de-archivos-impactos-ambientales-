@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
  * @author Daniel Cano
  * @author Juan P. Arango
  */
-public class RegistroFotografico {
+public class RegistroFotografico implements RegistroFotograficoIF{
     private JFileChooser seleccionar;
     private File archivo;
     private byte[] imagen;
@@ -46,12 +46,12 @@ public class RegistroFotografico {
         this.imagenes = imagenes;
     }
     
-
     /**
-     * Método creado para seleccionar el archivo que queremos subir
+     *Método creado para seleccionar el archivo que queremos subir
      * @param archivo
-     * @return Retorna la imagen seleccionada para luego agregarla al registro
+     * @return 
      */
+    
     public byte [] AbrirImagen(File archivo){
         byte[] imagen = new byte[1024*100];
         try{
@@ -67,8 +67,8 @@ public class RegistroFotografico {
      * Método que nos sirve para guardar la imagen que seleccionamos
      * @param archivo
      * @param byteImg
-     * @return Nos retorna si la imagen se guardó
-     */    
+     * @return 
+     */
     public String GuardarImagen(File archivo, byte[] byteImg){
         String respuesta = null;
         try {
@@ -82,9 +82,9 @@ public class RegistroFotografico {
     }
     
     /**
-     * Se agrega la imagen previamente seleccionada y guardada al informe final
-     * 
+     *Método que agrega la imagen previamente seleccionada y la guardada al informe final
      */
+    @Override
       public void agregarRegistroFotografico(){
           if(seleccionar.showDialog(null, null)==JFileChooser.APPROVE_OPTION){
               archivo=seleccionar.getSelectedFile();
@@ -119,6 +119,10 @@ public class RegistroFotografico {
           
       }
       
+      /**
+       * Método creado para que una vez creado el pdf, el ArrayList quede vacío
+       */
+      @Override
       public void limpiarRegistrosFotograficos(){
           imagenes.clear();
       }
