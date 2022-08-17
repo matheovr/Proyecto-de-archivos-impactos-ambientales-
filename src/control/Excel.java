@@ -121,13 +121,13 @@ public class Excel {
         }
     }
     
-    public void llamarExportacionCVS() throws IOException{
+    public void llamarExportacionCsv() throws IOException{
         List<ImpactoAmbiental> infoImpacto = new ArrayList<ImpactoAmbiental>();
         infoImpacto.add(new ImpactoAmbiental());
-        exportarCSV(infoImpacto);
+        exportarCsv(infoImpacto);
     }
     
-    public void exportarCSV(List<ImpactoAmbiental> infoImpacto) throws IOException{
+    public void exportarCsv(List<ImpactoAmbiental> infoImpacto) throws IOException{
         String salidaArchivo = "InformacionDeImpactoAmbiental.csv";
         boolean existe = new File(salidaArchivo).exists();
         if(existe){

@@ -304,9 +304,19 @@ public class ImpactoAmbiental {
         return "ImpactoAmbiental{" + "proceso=" + proceso + ", sede=" + sede + ", actividadAsociada=" + actividadAsociada + ", cicloDeVida=" + cicloDeVida + ", observaciones=" + observaciones + ", legislacionAsociada=" + legislacionAsociada + ", controlOperacional=" + controlOperacional + ", accionesDeMejora=" + accionesDeMejora + ", situacion=" + situacion + ", aspectoAmbiental=" + aspectoAmbiental + ", impactoAmbiental=" + impactoAmbiental + ", recursoAfectado=" + recursoAfectado + ", tipoDelImpacto=" + tipoDelImpacto + ", calificacion=" + calificacion + ", alcance=" + alcance + ", probabilidad=" + probabilidad + ", duracion=" + duracion + ", recuperabilidad=" + recuperabilidad + ", magnitud=" + magnitud + ", normatividad=" + normatividad + ", importanciaDelImpacto=" + importanciaDelImpacto + ", cumpleNormatividad=" + cumpleNormatividad + ", valor=" + valor + '}';
     }
     
+    /**
+     * Método que realiza la operacion para calcular la importancia del impacto
+     * @return Retorna el resultado de la importancia del impacto
+     */
+    
     public void calcImportancia(){
         this.importanciaDelImpacto=this.alcance*this.probabilidad*this.duracion*this.recuperabilidad*this.magnitud*this.normatividad;
     }
+    
+    /**
+     * Método que nos dice el valor de la significancia
+     * @return Retorna un String diciendo si el valor es ALTA, MODERADA O BAJA
+     */
     
     public void calcValor(){
         if (this.importanciaDelImpacto>125000 && this.importanciaDelImpacto<=1000000){
@@ -319,6 +329,11 @@ public class ImpactoAmbiental {
                     this.valor="BAJA";
                 }
     }
+    
+    /**
+     * Método que nos dice la calificacion de la significancia 
+     * @return Retorna un String diciendo si la calificación es SIGNIFICATIVO o NO SIGNIFICATIVO
+     */
     
     public void calcCalificacion(){
         if ((this.importanciaDelImpacto>25000 && this.cumpleNormatividad==true) || (this.importanciaDelImpacto>25000 && this.cumpleNormatividad==false)){
