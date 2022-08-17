@@ -306,7 +306,6 @@ public class ImpactoAmbiental {
     
     /**
      * Método que realiza la operacion para calcular la importancia del impacto
-     * @return Retorna el resultado de la importancia del impacto
      */
     
     public void calcImportancia(){
@@ -315,7 +314,6 @@ public class ImpactoAmbiental {
     
     /**
      * Método que nos dice el valor de la significancia
-     * @return Retorna un String diciendo si el valor es ALTA, MODERADA O BAJA
      */
     
     public void calcValor(){
@@ -332,7 +330,6 @@ public class ImpactoAmbiental {
     
     /**
      * Método que nos dice la calificacion de la significancia 
-     * @return Retorna un String diciendo si la calificación es SIGNIFICATIVO o NO SIGNIFICATIVO
      */
     
     public void calcCalificacion(){
