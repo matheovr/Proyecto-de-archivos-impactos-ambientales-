@@ -55,7 +55,13 @@ public class Pdf implements PdfIF{
 
     public Pdf() {
     }
-
+    
+    /**
+     * Crea el reporte se guarda en la ruta respectiva y se le agrega el encabezdo, el cuerpo y la informacion al PDF.
+     * 
+     * @param reporte
+     */
+    
     @Override
     public void crearReporte(ImpactoAmbiental reporte) {
         LocalDate fechaLocal = LocalDate.now();
@@ -84,7 +90,12 @@ public class Pdf implements PdfIF{
 
         }
     }
-
+    
+    /**
+     * Se crean las dos primeras tablas del PDF diferentes del encabezado que son de contenido estatico.
+     * 
+     * @param documento
+     */
     @Override
     public void agregarInformacionInicial(Document documento) {
         try {
@@ -115,6 +126,12 @@ public class Pdf implements PdfIF{
             System.out.println("Ha ocurrido un error con el documento pdf");
         }
     }
+    
+    /**
+     * Este metodo crea la tabla de control de cambios que se ve al final del PDF y es de contenido estatico.
+     * 
+     * @param documento
+     */
 
     @Override
     public void agregarInformacionControlCambios(Document documento) {
@@ -145,6 +162,12 @@ public class Pdf implements PdfIF{
         }
 
     }
+    
+    /**
+     * Este metodo crea la ultima tabla del pdf, y esta contiene informacion de tipo estatica.
+     * 
+     * @param documento
+     */
 
     @Override
     public void agregarInformacionFinal(Document documento) {
@@ -172,7 +195,15 @@ public class Pdf implements PdfIF{
             System.out.println("Ha ocurrido un error con el documento pdf");
         }
     }
-
+    
+     /**
+     * Este metodo crea todas las tablas que contienen la informacion de entrada por el usuario que se 
+     * encuentra en la instacia reporte de la clase ImpactoAmbiental. 
+     * 
+     * @param documento
+     * @param reporte
+     */
+    
     @Override
     public void agregarCuerpoPdf(Document documento, ImpactoAmbiental reporte) {
 
@@ -260,6 +291,12 @@ public class Pdf implements PdfIF{
         }
 
     }
+    /**
+     * Metodo el cual crea una tabla donde se va a anadir cada registro fotograficos en una celda.
+     * 
+     * @param documento
+     * @param registrosFotograficos
+     */
     
     @Override
     public void agregarRegistrosFotograficos(Document documento, ArrayList<Image> registrosFotograficos){
@@ -278,7 +315,17 @@ public class Pdf implements PdfIF{
             System.out.println("Ocurrió un error al agregar los registros fotográficos al documento");
         }
     }
-
+    
+     /**
+     * El siguiente método permite modificar celdas con unas características como su contenido, su fuente, tamaño y color.
+     * 
+     * @param titulo
+     * @param fuente
+     * @param columnas
+     * @param colorFondo
+     * @return Retorna una PdfPCell con modificaciones de estilo según lo requerido en el pdf del IDEAM y los valores pasados como parámetos
+     */
+    
     @Override
     public PdfPCell crearCeldaModificada(String titulo, BaseColor colorFondo, Font fuente, int columnas) {
         PdfPCell celda = new PdfPCell();
@@ -291,6 +338,16 @@ public class Pdf implements PdfIF{
         celda.setVerticalAlignment(PdfPCell.ALIGN_MIDDLE);
         return celda;
     }
+    
+     /**
+     * Sobreescribe el metodo crear celda modificada haciendo uso del polimorfismo parametrico que 
+     * permite modificar celdas con unas características como su contenido, su fuente y su tamaño.
+     * 
+     * @param titulo
+     * @param fuente
+     * @param columnas
+     * @return Retorna una PdfPCell con modificaciones de estilo según lo requerido en el pdf del IDEAM y los valores pasados como parámetos
+     */
 
     @Override
     public PdfPCell crearCeldaModificada(String titulo, Font fuente, int columnas) {
@@ -303,6 +360,16 @@ public class Pdf implements PdfIF{
         celda.setVerticalAlignment(PdfPCell.ALIGN_MIDDLE);
         return celda;
     }
+    
+     /**
+     * Sobreescribe el metodo crear celda modificada haciendo uso del polimorfismo parametrico que 
+     * permite modificar celdas con unas características como su contenido, su color y su tamaño.
+     * 
+     * @param titulo
+     * @param columnas
+     * @param colorFondo
+     * @return Retorna una PdfPCell con modificaciones de estilo según lo requerido en el pdf del IDEAM y los valores pasados como parámetos
+     */
 
     @Override
     public PdfPCell crearCeldaModificada(String titulo, BaseColor colorFondo, int columnas) {
