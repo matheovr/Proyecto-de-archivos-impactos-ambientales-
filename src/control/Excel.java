@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.ImpactoAmbiental;
@@ -117,9 +118,19 @@ public class Excel {
         }
     }
     
+    /**
+     * Método que crea el documento .csv con los datos ingresados por el usuario
+     * @param infoImpacto
+     * @throws IOException 
+     */
     
     public void exportarCsv(ImpactoAmbiental infoImpacto) throws IOException{
-        String salidaArchivo = "InformacionDeImpactoAmbiental.csv";
+        LocalDate fechaLocal = LocalDate.now();
+        String fecha = String.valueOf(fechaLocal.getDayOfMonth())+ "-" + String.valueOf(fechaLocal.getMonthValue()) + "-" + String.valueOf(fechaLocal.getYear());
+        String titulo = "Reporte Impacto Ambiental - Modificable - " + fecha;
+        String salidaArchivo = System.getProperty("user.home");
+        salidaArchivo = salidaArchivo + "/Documents/" + titulo + ".csv";
+        
         boolean existe = new File(salidaArchivo).exists();
         if(existe){
             File archivoImpactoAmbiental = new File(salidaArchivo);
@@ -151,7 +162,51 @@ public class Excel {
             salidaCSV.write("ACCIONES DE MEJORA DEL CONTROL OPERACIONAL");
             salidaCSV.write(infoImpacto.getAccionesDeMejora());
             salidaCSV.endRecord();
-            
+            salidaCSV.write("SITUACION");
+            salidaCSV.write(infoImpacto.getSituacion());
+            salidaCSV.endRecord();
+            salidaCSV.write("ASPECTO AMBIENTAL ASOCIADO");
+            salidaCSV.write(infoImpacto.getAspectoAmbiental());
+            salidaCSV.endRecord();
+            salidaCSV.write("IMPACTO AMBIENTAL ASOCIADO");
+            salidaCSV.write(infoImpacto.getImpactoAmbiental());
+            salidaCSV.endRecord();
+            salidaCSV.write("RECURSO AFECTADO");
+            salidaCSV.write(infoImpacto.getRecursoAfectado());
+            salidaCSV.endRecord();
+            salidaCSV.write("TIPO DEL IMPACTO");
+            salidaCSV.write(infoImpacto.getTipoDelImpacto());
+            salidaCSV.endRecord();
+            salidaCSV.write("CALIFICACION");
+            salidaCSV.write(infoImpacto.getCalificacion());
+            salidaCSV.endRecord();
+            salidaCSV.write("VALOR");
+            salidaCSV.write(infoImpacto.isValor());
+            salidaCSV.endRecord();
+            salidaCSV.write("ALCANCE");
+            salidaCSV.write(String.valueOf(infoImpacto.getAlcance()));
+            salidaCSV.endRecord();
+            salidaCSV.write("PROBABILIDAD");
+            salidaCSV.write(String.valueOf(infoImpacto.getProbabilidad()));
+            salidaCSV.endRecord();
+            salidaCSV.write("DURACION");
+            salidaCSV.write(String.valueOf(infoImpacto.getDuracion()));
+            salidaCSV.endRecord();
+            salidaCSV.write("RECUPERABILIDAD");
+            salidaCSV.write(String.valueOf(infoImpacto.getRecuperabilidad()));
+            salidaCSV.endRecord();
+            salidaCSV.write("MAGNITUD");
+            salidaCSV.write(String.valueOf(infoImpacto.getMagnitud()));
+            salidaCSV.endRecord();
+            salidaCSV.write("NORMATIVIDAD");
+            salidaCSV.write(String.valueOf(infoImpacto.getNormatividad()));
+            salidaCSV.endRecord();
+            salidaCSV.write("IMPORTANCIA DEL IMPACTO");
+            salidaCSV.write(String.valueOf(infoImpacto.getImportanciaDelImpacto()));
+            salidaCSV.endRecord();
+            salidaCSV.write("CUMPLE CON LA NORMATIVIDAD");
+            salidaCSV.write(String.valueOf(infoImpacto.isCumpleNormatividad()));
+            salidaCSV.endRecord();
             salidaCSV.close();
         } catch(IOException e) {
             e.printStackTrace();
