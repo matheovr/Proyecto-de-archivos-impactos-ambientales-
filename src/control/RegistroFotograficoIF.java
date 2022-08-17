@@ -9,6 +9,7 @@ import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.pdf.PdfPCell;
+import java.io.File;
 import modelo.ImpactoAmbiental;
 
 /**
@@ -23,4 +24,6 @@ import modelo.ImpactoAmbiental;
 public interface RegistroFotograficoIF {
           public void agregarRegistroFotografico();
           public void limpiarRegistrosFotograficos();
+          public String GuardarImagen(File archivo, byte[] byteImg);
+          public byte [] AbrirImagen(File archivo);
 }
