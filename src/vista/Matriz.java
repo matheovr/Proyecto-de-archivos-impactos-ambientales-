@@ -45,6 +45,12 @@ public class Matriz extends javax.swing.JFrame {
         jScrollPane6.getVerticalScrollBar().setUnitIncrement(10);
     }
     
+    /**
+     * Este método permite crear una instancia de la clase impactoAmbiental asignando a los atributos
+     * los datos ingresados en la interfaz gráfica.
+     * 
+     * @return Retorna el objeto que se crea con base en la información ingresada.
+     */
     public ImpactoAmbiental crearImpactoAmbiental(){
         ImpactoAmbiental registro = new ImpactoAmbiental(txtProceso.getText(), txtSede.getText(), txtActividadAsociada.getText(), txtCicloVida.getText(), txtObservaciones.getText(), 
                 txtLegislacion.getText(), txtControlOperacional.getText(), txtAccionMejora.getText(), boxSituacion.getSelectedItem().toString(), boxAspectoAmbiental.getSelectedItem().toString(), 
@@ -66,11 +72,14 @@ public class Matriz extends javax.swing.JFrame {
             
         }
         
-        System.out.println(registro.toString());
-        
         return registro;
     }
     
+    /**
+     * Este método se encarga de limpiar todos los campos de texto y regresar los ComboBox a su valor
+     * inicial una vez se crea un nuevo registro.
+     * 
+     */
     public void limpiarCampos() {
         txtProceso.setText("");
         txtSede.setText("");

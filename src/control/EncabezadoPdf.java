@@ -28,7 +28,7 @@ import java.util.logging.Logger;
  * @author Daniel Cano
  * @author Juan P. Arango
  */
-public class EncabezadoPdf extends PdfPageEventHelper{
+public class EncabezadoPdf extends PdfPageEventHelper implements EncabezadoPdfIF{
     private final String CODIGO = "E-SGI-A-F008";
     private final String TITULO = "MATRIZ DE IDENTIFICACION DE ASPECTOS Y VALORACION DE IMPACTOS AMBIENTALES";
     private final int VERSION = 3;

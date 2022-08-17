@@ -8,8 +8,11 @@ package control;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Font;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.pdf.PdfPCell;
 import modelo.ImpactoAmbiental;
+import java.util.ArrayList;
+
 
 /**
  * @author Ana Vega
@@ -30,6 +33,8 @@ public interface PdfIF {
     public PdfPCell crearCeldaModificada(String titulo, BaseColor colorFondo, Font fuente, int columnas);
     public PdfPCell crearCeldaModificada(String titulo, Font fuente, int columnas);
     public PdfPCell crearCeldaModificada(String titulo, BaseColor colorFondo, int columnas);
+    public void agregarRegistrosFotograficos(Document documento, ArrayList<Image> registrosFotograficos);
+
     
     
 }
